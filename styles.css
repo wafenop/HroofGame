@@ -33,7 +33,7 @@
     --honeycomb-gradient: linear-gradient(135deg, #1a237e, #283593);
     --honeycomb-border: rgba(255, 255, 255, 0.1);
     
-    /* متغيرات الخلية السداسية */
+    /* متغيرات الخلية السداسية - تم تحويلها لقيم ثابتة */
     --hex-width: 80px;
     --hex-height: 92px;
     --hex-margin: 5px;
@@ -309,7 +309,7 @@ body.dark-mode .cream-btn {
     transition: var(--transition-normal);
 }
 
-/* تعديل على هيكل الخلية السداسية */
+/* تعديل على هيكل الخلية السداسية - تحسين للهواتف المحمولة */
 .honeycomb {
     position: absolute;
     width: 480px;
@@ -320,11 +320,11 @@ body.dark-mode .cream-btn {
     transform-origin: center center;
 }
 
-/* تصميم الخلية السداسية */
+/* تصميم الخلية السداسية - تحديد أبعاد ثابتة */
 .hex {
     position: absolute;
-    width: var(--hex-width);
-    height: var(--hex-height);
+    width: 80px !important; /* تحديد عرض ثابت مهم */
+    height: 92px !important; /* تحديد ارتفاع ثابت مهم */
     background-color: var(--cream-color);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     display: flex;
@@ -406,7 +406,7 @@ body.dark-mode .cream-btn {
     100% { box-shadow: 0 0 15px 5px rgba(147, 112, 219, 0.7); }
 }
 
-/* نص الحالة */
+/* نص الحالة - تم تحديثه لإزالة اللون البنفسجي */
 .status-text {
     margin: var(--spacing-lg) 0;
     padding: 15px 25px;
@@ -417,13 +417,20 @@ body.dark-mode .cream-btn {
     box-shadow: var(--shadow-md);
     width: 100%;
     text-align: center;
-    transition: var(--transition-normal);
+    transition: transform 0.2s ease;
     border-right: 4px solid var(--accent-color);
     color: var(--text-color);
 }
 
 body.dark-mode .status-text {
     color: var(--light-text-color);
+}
+
+/* تحديث تأثير تنشيط نص الحالة بدون تغيير اللون */
+@keyframes flash-status {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
 }
 
 /* إحصائيات اللعبة */
@@ -560,17 +567,6 @@ body.dark-mode .dialog-content p {
     box-shadow: var(--shadow-sm);
 }
 
-/* تحسينات UI */
-.status-update {
-    animation: flash-status 0.3s ease;
-}
-
-@keyframes flash-status {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); background-color: var(--accent-color); color: white; }
-    100% { transform: scale(1); }
-}
-
 /* تعديلات توافقية للهواتف المحمولة */
 @media (max-width: 700px) {
     .container {
@@ -614,8 +610,15 @@ body.dark-mode .dialog-content p {
         text-align: left;
         margin-bottom: 15px;
     }
+    
+    /* تأكيد الأحجام للخلايا في الموبايل */
+    .hex {
+        width: 80px !important;
+        height: 92px !important;
+    }
 }
 
+/* تعديلات إضافية للشاشات الصغيرة */
 @media (max-width: 500px) {
     .honeycomb-container {
         height: 380px;
@@ -639,13 +642,15 @@ body.dark-mode .dialog-content p {
         flex-direction: column;
     }
     
-    :root {
-        --hex-width: 60px;
-        --hex-height: 70px;
-        --hex-font-size: 26px;
+    /* تم استبدال القيم النسبية بقيم ثابتة لتفادي المشاكل في الهواتف */
+    .hex {
+        width: 80px !important;
+        height: 92px !important;
+        font-size: 25px;
     }
 }
 
+/* دعم إضافي للهواتف الصغيرة جداً */
 @media (max-width: 400px) {
     .honeycomb-container {
         height: 340px;
@@ -666,9 +671,18 @@ body.dark-mode .dialog-content p {
         padding: 6px 12px;
     }
     
-    :root {
-        --hex-width: 50px;
-        --hex-height: 58px;
-        --hex-font-size: 22px;
+    /* المحافظة على الأبعاد الثابتة في الهواتف الصغيرة جداً */
+    .hex {
+        width: 80px !important;
+        height: 92px !important;
+        font-size: 24px;
     }
+}
+
+/* تصحيح إضافي للخلايا المتفرقة في الهواتف */
+.honeycomb .hex {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    will-change: transform;
+    transform-style: preserve-3d;
 }

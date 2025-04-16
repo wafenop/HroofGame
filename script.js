@@ -82,14 +82,17 @@ document.addEventListener('DOMContentLoaded', function() {
             this.elements.redCount.textContent = redCount;
         },
         
-        // تحديث نص الحالة
+        // تحديث نص الحالة - تم تعديلها لإزالة اللون البنفسجي
         updateStatusText(text) {
             this.elements.statusText.textContent = text;
-            // تأثير بصري للتنبيه
-            this.elements.statusText.classList.add('status-update');
+            
+            // تطبيق تأثير بسيط للتنبيه بدون تغيير اللون
+            this.elements.statusText.style.transform = 'scale(1.02)';
+            
+            // إعادة النص إلى حجمه الطبيعي بعد وقت قصير
             setTimeout(() => {
-                this.elements.statusText.classList.remove('status-update');
-            }, 300);
+                this.elements.statusText.style.transform = 'scale(1)';
+            }, 200);
         },
         
         // إظهار مربع حوار التأكيد
@@ -125,23 +128,32 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         },
         
-        // إنشاء هيكل خلية العسل ديناميكياً
+        // إنشاء هيكل خلية العسل ديناميكياً - طريقة محسنة للتوافق مع الهواتف
         createHoneycomb() {
             const honeycomb = this.elements.honeycomb;
             honeycomb.innerHTML = '';
             
-            // تعيين موضع النمط المبدئي للحاوية
+            // ضبط نمط container للتناسق
             honeycomb.style.position = 'absolute';
             honeycomb.style.width = '480px';
             honeycomb.style.height = '500px';
+            
+            // تحديد أبعاد الخلية بدقة
+            const hexWidth = 80;
+            const hexHeight = 92;
             
             // إنشاء الصف الأول (لون وردي)
             for (let i = 0; i < 6; i++) {
                 const hex = document.createElement('div');
                 hex.className = 'hex pink';
                 hex.id = `hex-row1-${i}`;
-                hex.style.left = `${-35 + (i * 80)}px`;
+                hex.style.left = `${-35 + (i * hexWidth)}px`;
                 hex.style.top = '0px';
+                
+                // تحديد الأبعاد بشكل صريح لضمان التلاصق
+                hex.style.width = `${hexWidth}px`;
+                hex.style.height = `${hexHeight}px`;
+                
                 honeycomb.appendChild(hex);
             }
             
@@ -171,8 +183,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                     
                     hex.id = `hex-row${row+2}-${i}`;
-                    hex.style.left = `${leftStart + (i * 80)}px`;
+                    hex.style.left = `${leftStart + (i * hexWidth)}px`;
                     hex.style.top = `${topPosition}px`;
+                    
+                    // تحديد الأبعاد بشكل صريح لضمان التلاصق
+                    hex.style.width = `${hexWidth}px`;
+                    hex.style.height = `${hexHeight}px`;
+                    
                     honeycomb.appendChild(hex);
                 }
             }
@@ -182,8 +199,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 const hex = document.createElement('div');
                 hex.className = 'hex pink';
                 hex.id = `hex-row7-${i}`;
-                hex.style.left = `${-35 + (i * 80)}px`;
+                hex.style.left = `${-35 + (i * hexWidth)}px`;
                 hex.style.top = '420px';
+                
+                // تحديد الأبعاد بشكل صريح لضمان التلاصق
+                hex.style.width = `${hexWidth}px`;
+                hex.style.height = `${hexHeight}px`;
+                
                 honeycomb.appendChild(hex);
             }
         },
@@ -253,50 +275,81 @@ document.addEventListener('DOMContentLoaded', function() {
             return true;
         },
         
-        // تغيير حجم خلية العسل بناءً على حجم الشاشة
+        // تغيير حجم خلية العسل بناءً على حجم الشاشة - طريقة محسنة
         resizeHoneycomb(isMobile) {
             const { honeycombContainer, honeycomb } = this.elements;
-            const containerWidth = honeycombContainer.clientWidth;
             const windowWidth = window.innerWidth;
             
-            // إعادة ضبط وتنظيف جميع الأنماط المطبقة مسبقاً
-            honeycomb.style.position = '';
-            honeycomb.style.top = '';
-            honeycomb.style.right = '';
-            honeycomb.style.bottom = '';
-            honeycomb.style.margin = '';
+            // إعادة ضبط نمط الخلية أولاً
+            honeycomb.style = '';
             
-            // تطبيق التوسيط الأساسي
+            // تطبيق النمط الثابت
             honeycomb.style.position = 'absolute';
-            honeycomb.style.left = '50%';
+            honeycomb.style.width = '480px';
+            honeycomb.style.height = '500px';
             honeycomb.style.top = '50%';
+            honeycomb.style.left = '50%';
             
-            // تحديد مقياس التكبير/التصغير حسب حجم الشاشة
-            let scale = 1;
+            // تحديد مقياس التحويل المناسب لكل حجم شاشة
+            let scale;
             if (isMobile) {
-                if (windowWidth <= 400) {
+                // مقياس للأجهزة المحمولة بدقة أكبر
+                if (windowWidth <= 320) {
                     scale = 0.45;
-                    honeycombContainer.style.height = '340px';
-                } else if (windowWidth <= 500) {
-                    scale = 0.55;
-                    honeycombContainer.style.height = '380px';
-                } else {
-                    scale = 0.7;
+                    honeycombContainer.style.height = '330px';
+                } else if (windowWidth <= 375) {
+                    scale = 0.52;
+                    honeycombContainer.style.height = '360px';
+                } else if (windowWidth <= 480) {
+                    scale = 0.58;
+                    honeycombContainer.style.height = '390px';
+                } else if (windowWidth <= 600) {
+                    scale = 0.65;
                     honeycombContainer.style.height = '420px';
+                } else {
+                    scale = 0.75;
+                    honeycombContainer.style.height = '460px';
                 }
             } else {
                 scale = 1;
                 honeycombContainer.style.height = '540px';
             }
             
-            // تطبيق التحويلات مع التوسيط
+            // تطبيق التحويل مع توسيط دقيق
+            honeycomb.style.transformOrigin = 'center center';
             honeycomb.style.transform = `translate(-50%, -50%) scale(${scale})`;
             
-            // تصحيح إضافي للأجهزة المحمولة
-            if (isMobile && windowWidth <= 400) {
-                // تعديل إضافي للشاشات الصغيرة جداً
-                honeycomb.style.marginLeft = '-15px';
-            }
+            // إضافة تأخير لإعادة ضبط الخلايا
+            setTimeout(() => {
+                // إجبار إعادة الرسم وضمان أبعاد ثابتة
+                const hexCells = document.querySelectorAll('.hex');
+                const hexWidth = 80;
+                const hexHeight = 92;
+                
+                hexCells.forEach(cell => {
+                    // تأكيد على الأبعاد بشكل صريح
+                    cell.style.width = `${hexWidth}px`;
+                    cell.style.height = `${hexHeight}px`;
+                    
+                    // تطبيق تحديث بسيط لإجبار المتصفح على إعادة رسم العنصر
+                    cell.style.display = 'none';
+                    // إجبار المتصفح على إعادة تقييم الDOMحالاً
+                    cell.offsetHeight;
+                    cell.style.display = 'flex';
+                });
+            }, 50);
+        },
+        
+        // تأكيد تطبيق أبعاد ثابتة على جميع الخلايا
+        enforceHexDimensions() {
+            const hexCells = document.querySelectorAll('.hex');
+            const hexWidth = 80;
+            const hexHeight = 92;
+            
+            hexCells.forEach(cell => {
+                cell.style.width = `${hexWidth}px`;
+                cell.style.height = `${hexHeight}px`;
+            });
         }
     };
     
@@ -325,17 +378,36 @@ document.addEventListener('DOMContentLoaded', function() {
             // إضافة أحداث المستمعين
             this.setupEventListeners();
             
-            // توسيط خلية العسل بعد التحميل الكامل
-            window.addEventListener('load', () => {
-                setTimeout(() => {
-                    this.centerHoneycomb();
-                }, 200);
-            });
+            // ضمان التطبيق الصحيح للتوسيط
+            this.ensureProperRendering();
+        },
+        
+        // ضمان التطبيق الصحيح للتوسيط
+        ensureProperRendering() {
+            // تأكيد تطبيق الأبعاد الثابتة للخلايا
+            UIManager.enforceHexDimensions();
+            
+            // تطبيق آلية اختبار التحميل للتأكد من التوسيط بعد تحميل الصفحة بالكامل
+            if (document.readyState === 'complete') {
+                this.centerHoneycomb();
+            } else {
+                window.addEventListener('load', () => {
+                    setTimeout(() => this.centerHoneycomb(), 100);
+                });
+            }
+            
+            // إضافة تأكيد متأخر لضمان الاستقرار
+            setTimeout(() => this.centerHoneycomb(), 300);
         },
         
         // توسيط خلية العسل في وسط الحاوية
         centerHoneycomb() {
             UIManager.resizeHoneycomb(this.state.isMobile);
+            
+            // تأكيد إضافي للأبعاد
+            setTimeout(() => {
+                UIManager.enforceHexDimensions();
+            }, 100);
         },
         
         // إعداد مستمعي الأحداث
@@ -359,21 +431,31 @@ document.addEventListener('DOMContentLoaded', function() {
             // أحداث النقر على الخلايا
             this.setupCellClickEvents();
             
-            // أحداث تغيير حجم النافذة
-            const resizeObserver = new ResizeObserver(entries => {
-                // إعادة اكتشاف الجهاز
-                this.detectDevice();
-                // تحديث حجم خلية العسل
-                this.centerHoneycomb();
-            });
+            // استخدام ResizeObserver لمراقبة تغييرات الحجم بدقة
+            if (window.ResizeObserver) {
+                const resizeObserver = new ResizeObserver(() => {
+                    // إعادة اكتشاف الجهاز
+                    this.detectDevice();
+                    // تحديث حجم خلية العسل
+                    this.centerHoneycomb();
+                });
+                
+                // مراقبة حجم الحاوية
+                resizeObserver.observe(UIManager.elements.honeycombContainer);
+            } else {
+                // دعم المتصفحات القديمة التي لا تدعم ResizeObserver
+                window.addEventListener('resize', () => {
+                    this.detectDevice();
+                    this.centerHoneycomb();
+                });
+            }
             
-            // مراقبة حجم الحاوية
-            resizeObserver.observe(UIManager.elements.honeycombContainer);
-            
-            // مراقبة إضافية لحجم النافذة للتأكد من التوسيط الصحيح
-            window.addEventListener('resize', () => {
-                this.detectDevice();
-                this.centerHoneycomb();
+            // التعامل مع تدوير الشاشة في الأجهزة المحمولة
+            window.addEventListener('orientationchange', () => {
+                setTimeout(() => {
+                    this.detectDevice();
+                    this.centerHoneycomb();
+                }, 200);
             });
         },
         
@@ -441,6 +523,9 @@ document.addEventListener('DOMContentLoaded', function() {
             this.state.greenCellsCount = this.state.greenCellsCount - oldGreen + newGreen;
             this.state.redCellsCount = this.state.redCellsCount - oldRed + newRed;
             UIManager.updateCounters(this.state.greenCellsCount, this.state.redCellsCount);
+            
+            // تأكيد على الأبعاد بعد تغيير اللون
+            setTimeout(() => UIManager.enforceHexDimensions(), 10);
         },
         
         // تظليل حرف عشوائي
@@ -497,6 +582,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             UIManager.updateStatusText('تم مسح جميع الألوان!');
+            
+            // تأكيد على الأبعاد بعد إعادة التعيين
+            setTimeout(() => UIManager.enforceHexDimensions(), 10);
         },
         
         // تبديل الوضع الليلي
@@ -553,6 +641,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // إعادة تعيين الخلايا
             this.resetAllCells();
             UIManager.updateStatusText('تم تبديل الحروف بنجاح!');
+            
+            // تأكيد على الأبعاد بعد تبديل الحروف
+            setTimeout(() => UIManager.enforceHexDimensions(), 500);
         }
     };
     

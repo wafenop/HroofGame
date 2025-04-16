@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة خلية الحروف</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- زر تبديل الوضع الليلي -->
+        <div class="theme-toggle">
+            <button id="themeToggle" class="theme-toggle-btn" aria-label="تبديل الوضع الليلي">
+                <i class="fas fa-moon"></i>
+                <span>الوضع الليلي</span>
+            </button>
+        </div>
+
+        <!-- عنوان اللعبة -->
+        <div class="header">
+            <h1 class="game-title"><i class="fas fa-chess-board"></i> <span>لعبة</span> خلية الحروف</h1>
+        </div>
+
+        <!-- أزرار التحكم باللون -->
+        <div class="controls-container">
+            <div class="controls">
+                <button class="color-btn green-btn" id="greenBtn" aria-label="لون أخضر"><i class="fas fa-paint-brush"></i> الأخضر</button>
+                <button class="color-btn red-btn" id="redBtn" aria-label="لون أحمر"><i class="fas fa-paint-brush"></i> الأحمر</button>
+                <button class="color-btn cream-btn" id="creamBtn" aria-label="لون أصلي"><i class="fas fa-paint-brush"></i> الأصلي</button>
+                <button class="color-btn reset-btn" id="resetBtn" aria-label="مسح الكل"><i class="fas fa-eraser"></i> مسح الكل</button>
+                <button class="color-btn random-btn" id="randomBtn" aria-label="حرف عشوائي"><i class="fas fa-random"></i> حرف عشوائي</button>
+                <button class="color-btn shuffle-btn" id="shuffleBtn" aria-label="تبديل الحروف"><i class="fas fa-sync-alt"></i> تبديل الحروف</button>
+            </div>
+        </div>
+
+        <div class="status-text" id="statusText" role="status" aria-live="polite">
+            اختر لوناً ثم انقر على الخلايا لتغيير لونها
+        </div>
+
+        <div class="honeycomb-container">
+            <div class="honeycomb" id="honeycomb">
+                <!-- سيتم إنشاء الخلايا ديناميكيًا بواسطة JavaScript -->
+            </div>
+        </div>
+
+        <div class="game-stats">
+            <div class="stat-box">
+                <i class="fas fa-leaf"></i>
+                <span>الخلايا الخضراء: <span id="greenCount">0</span></span>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-fire"></i>
+                <span>الخلايا الحمراء: <span id="redCount">0</span></span>
+            </div>
+        </div>
+
+        <!-- مربع حوار التأكيد -->
+        <div id="confirmDialog" class="confirm-dialog" role="dialog" aria-labelledby="confirmTitle" aria-modal="true">
+            <div class="dialog-content">
+                <h3 id="confirmTitle">تأكيد العملية</h3>
+                <p id="confirmMessage">سيتم حذف جميع التقدم الحالي وتبديل الحروف. هل أنت متأكد؟</p>
+                <div class="dialog-buttons">
+                    <button id="confirmYes" class="dialog-btn yes-btn">موافق</button>
+                    <button id="confirmNo" class="dialog-btn no-btn">إلغاء</button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+          © جميع الحقوق محفوظة - لعبة خلية الحروف بواسطة عبداللطيف خالد 2025 
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

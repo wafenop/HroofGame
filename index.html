@@ -14,33 +14,28 @@
     <div class="container">
         <!-- أزرار التحكم الرئيسية -->
         <div class="main-controls">
-            <div class="left-controls">
-                <!-- زر تبديل اللغة -->
+            <!-- زر تبديل اللغة والوضع الليلي -->
+            <div class="controls-group">
                 <button id="langToggle" class="control-btn">
                     <i class="fas fa-language"></i>
-                    <span>English</span>
+                    <span class="btn-text">English</span>
                 </button>
                 
-                <!-- زر تبديل الوضع الليلي -->
-                <button id="themeToggle" class="control-btn theme-toggle-btn">
+                <button id="themeToggle" class="control-btn">
                     <i class="fas fa-moon"></i>
-                    <span>الوضع الليلي</span>
+                    <span class="btn-text">الوضع الليلي</span>
                 </button>
-            </div>
             
-            <div class="right-controls">
                 <!-- أزرار التكبير والتصغير -->
-                <div class="zoom-controls">
-                    <button id="zoomInBtn" class="control-btn zoom-btn">
-                        <i class="fas fa-search-plus"></i>
-                    </button>
-                    <button id="zoomOutBtn" class="control-btn zoom-btn">
-                        <i class="fas fa-search-minus"></i>
-                    </button>
-                </div>
+                <button id="zoomInBtn" class="control-btn icon-only">
+                    <i class="fas fa-search-plus"></i>
+                </button>
+                <button id="zoomOutBtn" class="control-btn icon-only">
+                    <i class="fas fa-search-minus"></i>
+                </button>
                 
                 <!-- زر المساعدة -->
-                <button id="helpBtn" class="control-btn help-btn">
+                <button id="helpBtn" class="control-btn icon-only">
                     <i class="fas fa-question-circle"></i>
                 </button>
             </div>
@@ -160,41 +155,41 @@
             <div class="help-content">
                 <h3 id="helpTitle">تعليمات اللعبة</h3>
                 <div id="helpContent">
-            <h4>تعليمات اللعبة</h4>
-        <p><strong>كيفية اللعب:</strong></p>
-        <p><strong>الحرف الأول:</strong> يقوم مدير المسابقة باختيار حرف أول عشوائي، ثم يطرح سؤالًا يجب أن تبدأ إجابته بذلك الحرف.</p>
-        
-        <p><strong>هدف كل فريق:</strong></p>
-        <ul>
-            <li>🟥 الفريق الأحمر يسعى لتكوين خط عمودي باللون الأحمر يفوز بالجولة عند اكمال الخط.</li>
-            <li>🟩 الفريق الأخضر يسعى لتكوين خط أفقي باللون الأخضر يفوز بالجولة عند اكمال الخط.</li>
-        </ul>
-        
-        <p><strong>تحديد الفائز بالسؤال:</strong></p>
-        <ul>
-            <li>الفريق الذي يضغط الجرس أولًًا ⏳ لديه 3 ثوانٍ للإجابة.</li>
-            <li>✅ إجابة صحيحة → تتلون الخلية بلون الفريق.</li>
-            <li>❌ إجابة خاطئة → ينتقل السؤال للفريق الآخر لمدة 10 ثوانٍ ⏳، ثم يصبح متاحًا للجميع، وعلى من يريد الإجابة الضغط على الجرس أولًا.</li>
-            <li>الفريق الفائز بالحرف يختار الحرف التالي.</li>
-        </ul>
-        
-        <p><strong>تحديد الفائز بالمسابقة:</strong></p>
-        <ul>
-            <li>يتم لعب 3 جولات، والفريق الذي يفوز بجولتين هو الفائز بالمسابقة! 🏆</li>
-        </ul>
-        
-        <h4>ميزات إضافية</h4>
-        <ul>
-            <li><strong>مسح الكل:</strong> يعيد تعيين جميع الخلايا إلى حالتها الأصلية.</li>
-            <li><strong>حرف عشوائي:</strong> يبرز حرفًا عشوائيًا في اللوحة لمدة 3 ثوانٍ.</li>
-            <li><strong>تبديل الحروف:</strong> يخلط مواضع الحروف في اللوحة.</li>
-            <li><strong>الوضع الليلي:</strong> يبدل بين الواجهة الفاتحة والداكنة لراحة العينين.</li>
-            <li><strong>تغيير اللغة:</strong> يبدل بين الحروف العربية والإنجليزية.</li>
-            <li><strong>تكبير/تصغير:</strong> يتحكم في حجم خلية الحروف.</li>
-        </ul>
-        
-        <h4>حول اللعبة</h4>
-        <p>تم تصميم لعبة خلية الحروف لتكون تجربة تفاعلية ممتعة للصغار والكبار. تساعد اللعبة على تعزيز الثقافة العامة وروح الفريق بطريقة تنافسية ممتعة.</p>
+                    <h4>تعليمات اللعبة</h4>
+                    <p><strong>كيفية اللعب:</strong></p>
+                    <p><strong>الحرف الأول:</strong> يقوم مدير المسابقة باختيار حرف أول عشوائي، ثم يطرح سؤالًا يجب أن تبدأ إجابته بذلك الحرف.</p>
+                    
+                    <p><strong>هدف كل فريق:</strong></p>
+                    <ul>
+                        <li>🟥 الفريق الأحمر يسعى لتكوين خط عمودي باللون الأحمر يفوز بالجولة عند اكمال الخط.</li>
+                        <li>🟩 الفريق الأخضر يسعى لتكوين خط أفقي باللون الأخضر يفوز بالجولة عند اكمال الخط.</li>
+                    </ul>
+                    
+                    <p><strong>تحديد الفائز بالسؤال:</strong></p>
+                    <ul>
+                        <li>الفريق الذي يضغط الجرس أولًًا ⏳ لديه 3 ثوانٍ للإجابة.</li>
+                        <li>✅ إجابة صحيحة → تتلون الخلية بلون الفريق.</li>
+                        <li>❌ إجابة خاطئة → ينتقل السؤال للفريق الآخر لمدة 10 ثوانٍ ⏳، ثم يصبح متاحًا للجميع، وعلى من يريد الإجابة الضغط على الجرس أولًا.</li>
+                        <li>الفريق الفائز بالحرف يختار الحرف التالي.</li>
+                    </ul>
+                    
+                    <p><strong>تحديد الفائز بالمسابقة:</strong></p>
+                    <ul>
+                        <li>يتم لعب 3 جولات، والفريق الذي يفوز بجولتين هو الفائز بالمسابقة! 🏆</li>
+                    </ul>
+                    
+                    <h4>ميزات إضافية</h4>
+                    <ul>
+                        <li><strong>مسح الكل:</strong> يعيد تعيين جميع الخلايا إلى حالتها الأصلية.</li>
+                        <li><strong>حرف عشوائي:</strong> يبرز حرفًا عشوائيًا في اللوحة لمدة 3 ثوانٍ.</li>
+                        <li><strong>تبديل الحروف:</strong> يخلط مواضع الحروف في اللوحة.</li>
+                        <li><strong>الوضع الليلي:</strong> يبدل بين الواجهة الفاتحة والداكنة لراحة العينين.</li>
+                        <li><strong>تغيير اللغة:</strong> يبدل بين الحروف العربية والإنجليزية.</li>
+                        <li><strong>تكبير/تصغير:</strong> يتحكم في حجم خلية الحروف.</li>
+                    </ul>
+                    
+                    <h4>حول اللعبة</h4>
+                    <p>تم تصميم لعبة خلية الحروف لتكون تجربة تفاعلية ممتعة للصغار والكبار. تساعد اللعبة على تعزيز الثقافة العامة وروح الفريق بطريقة تنافسية ممتعة.</p>
                 </div>
                 <button id="closeHelpBtn" class="close-help-btn">إغلاق</button>
             </div>
@@ -205,312 +200,276 @@
         </footer>
     </div>
 
-    <!-- إضافة ملفات الصوت -->
-<!-- قم بتعليق هذه العناصر مؤقتاً لتجنب أخطاء 404 -->
-<!--
-<audio id="clickSound" src="sounds/click.mp3" preload="auto"></audio>
-<audio id="successSound" src="sounds/success.mp3" preload="auto"></audio>
-<audio id="errorSound" src="sounds/error.mp3" preload="auto"></audio>
-<audio id="shuffleSound" src="sounds/shuffle.mp3" preload="auto"></audio>
-<audio id="hintSound" src="sounds/hint.mp3" preload="auto"></audio>
--->
+    <script>
+    // تعريف المتغيرات العامة
+    var currentColor = null;
+    var greenCellsCount = 0;
+    var redCellsCount = 0;
+    var highlightedCell = null;
+    var highlightTimeout = null;
+    var currentZoom = 1;
 
-<script>
-// تعريف المتغيرات العامة
-var currentColor = null;
-var greenCellsCount = 0;
-var redCellsCount = 0;
-var highlightedCell = null;
-var highlightTimeout = null;
-var currentZoom = 1;
+    // قائمة الرسائل المستخدمة في اللعبة باللغتين
+    var statusMessages = {
+        'select-color': {
+            'ar': 'اختر لوناً ثم انقر على الخلايا لتغيير لونها',
+            'en': 'Select a color then click on cells to change their color'
+        },
+        'green-selected': {
+            'ar': 'اختر الخلايا لتلوينها بالأخضر',
+            'en': 'Select cells to color them green'
+        },
+        'red-selected': {
+            'ar': 'اختر الخلايا لتلوينها بالأحمر',
+            'en': 'Select cells to color them red'
+        },
+        'cream-selected': {
+            'ar': 'اختر الخلايا لإعادتها للون الأصلي',
+            'en': 'Select cells to reset them to original color'
+        },
+        'no-color-selected': {
+            'ar': 'الرجاء اختيار لون أولاً',
+            'en': 'Please select a color first'
+        },
+        'fixed-cell': {
+            'ar': 'لا يمكن تغيير لون الخلايا الثابتة',
+            'en': 'Fixed cells cannot be changed'
+        },
+        'random-letter': {
+            'ar': 'تم اختيار حرف عشوائي! سيختفي بعد 3 ثوان',
+            'en': 'Random letter selected! Will disappear in 3 seconds'
+        },
+        'reset-done': {
+            'ar': 'تم مسح جميع الألوان!',
+            'en': 'All colors have been reset!'
+        },
+        'shuffle-done': {
+            'ar': 'تم تبديل الحروف بنجاح!',
+            'en': 'Letters have been shuffled successfully!'
+        }
+    };
 
-// قائمة الرسائل المستخدمة في اللعبة باللغتين
-var statusMessages = {
-    'select-color': {
-        'ar': 'اختر لوناً ثم انقر على الخلايا لتغيير لونها',
-        'en': 'Select a color then click on cells to change their color'
-    },
-    'green-selected': {
-        'ar': 'اختر الخلايا لتلوينها بالأخضر',
-        'en': 'Select cells to color them green'
-    },
-    'red-selected': {
-        'ar': 'اختر الخلايا لتلوينها بالأحمر',
-        'en': 'Select cells to color them red'
-    },
-    'cream-selected': {
-        'ar': 'اختر الخلايا لإعادتها للون الأصلي',
-        'en': 'Select cells to reset them to original color'
-    },
-    'no-color-selected': {
-        'ar': 'الرجاء اختيار لون أولاً',
-        'en': 'Please select a color first'
-    },
-    'fixed-cell': {
-        'ar': 'لا يمكن تغيير لون الخلايا الثابتة',
-        'en': 'Fixed cells cannot be changed'
-    },
-    'fixed-green-cell': {
-        'ar': 'لا يمكن تغيير لون الخلايا الثابتة',
-        'en': 'Fixed cells cannot be changed'
-    },
-    'random-letter': {
-        'ar': 'تم اختيار حرف عشوائي! سيختفي بعد 3 ثوان',
-        'en': 'Random letter selected! Will disappear in 3 seconds'
-    },
-    'reset-done': {
-        'ar': 'تم مسح جميع الألوان!',
-        'en': 'All colors have been reset!'
-    },
-    'shuffle-done': {
-        'ar': 'تم تبديل الحروف بنجاح!',
-        'en': 'Letters have been shuffled successfully!'
-    }
-};
+    // الأحرف العربية والإنجليزية
+    var arabicLetters = ['أ', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'س', 'ش', 'ص', 'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ك', 'ل', 'م', 'ن'];
+    var englishLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y'];
 
-// تهيئة الصفحة بعد التحميل
-window.onload = function() {
-    console.log("تم تحميل الصفحة بالكامل");
-    
-    // إضافة الأحداث المباشرة للأزرار
-    setupDirectButtonHandlers();
-    
-    // إضافة الأحداث للخلايا
-    setupCellHandlers();
-    
-    // تحميل التقدم المحفوظ (إذا وجد)
-    loadSavedProgress();
-};
-
-// إعداد معالجات الأحداث المباشرة للأزرار
-function setupDirectButtonHandlers() {
-    // أزرار الألوان
-    var greenBtn = document.getElementById('greenBtn');
-    var redBtn = document.getElementById('redBtn');
-    var creamBtn = document.getElementById('creamBtn');
-    var resetBtn = document.getElementById('resetBtn');
-    var randomBtn = document.getElementById('randomBtn');
-    var shuffleBtn = document.getElementById('shuffleBtn');
-    var themeToggle = document.getElementById('themeToggle');
-    var helpBtn = document.getElementById('helpBtn');
-    var closeHelpBtn = document.getElementById('closeHelpBtn');
-    var langToggle = document.getElementById('langToggle');
-    var zoomInBtn = document.getElementById('zoomInBtn');
-    var zoomOutBtn = document.getElementById('zoomOutBtn');
-    
-    // تعيين معالجات الأحداث المباشرة
-    if (greenBtn) greenBtn.onclick = function() { setColor('green'); };
-    if (redBtn) redBtn.onclick = function() { setColor('red'); };
-    if (creamBtn) creamBtn.onclick = function() { setColor('cream'); };
-    if (resetBtn) resetBtn.onclick = confirmReset;
-    if (randomBtn) randomBtn.onclick = highlightRandomLetter;
-    if (shuffleBtn) shuffleBtn.onclick = confirmShuffle;
-    if (themeToggle) themeToggle.onclick = toggleDarkMode;
-    if (helpBtn) helpBtn.onclick = showHelp;
-    if (closeHelpBtn) closeHelpBtn.onclick = hideHelp;
-    if (langToggle) langToggle.onclick = toggleLanguage;
-    if (zoomInBtn) zoomInBtn.onclick = zoomIn;
-    if (zoomOutBtn) zoomOutBtn.onclick = zoomOut;
-    
-    // معالجات لأزرار التأكيد
-    var confirmYes = document.getElementById('confirmYes');
-    var confirmNo = document.getElementById('confirmNo');
-    
-    if (confirmYes) confirmYes.onclick = handleConfirmYes;
-    if (confirmNo) confirmNo.onclick = hideConfirmDialog;
-    
-    console.log("تم إعداد معالجات الأحداث المباشرة للأزرار");
-}
-
-// إعداد معالجات الأحداث للخلايا
-function setupCellHandlers() {
-    var cells = document.querySelectorAll('.hex');
-    
-    cells.forEach(function(cell) {
-        cell.onclick = function() {
-            handleCellClick(cell);
-        };
-    });
-    
-    console.log("تم إعداد معالجات الأحداث للخلايا");
-}
-
-// تعيين اللون الحالي
-function setColor(color) {
-    currentColor = color;
-    
-    // إزالة التأثير البصري من جميع الأزرار
-    document.getElementById('greenBtn').style.transform = '';
-    document.getElementById('redBtn').style.transform = '';
-    document.getElementById('creamBtn').style.transform = '';
-    document.getElementById('greenBtn').style.boxShadow = '';
-    document.getElementById('redBtn').style.boxShadow = '';
-    document.getElementById('creamBtn').style.boxShadow = '';
-    
-    // إضافة تأثير بصري للزر المحدد
-    if (color === 'green') {
-        document.getElementById('greenBtn').style.transform = 'translateY(-3px)';
-        document.getElementById('greenBtn').style.boxShadow = '0 0 0 3px var(--primary-dark)';
-        updateStatus('green-selected');
-    } else if (color === 'red') {
-        document.getElementById('redBtn').style.transform = 'translateY(-3px)';
-        document.getElementById('redBtn').style.boxShadow = '0 0 0 3px var(--secondary-dark)';
-        updateStatus('red-selected');
-    } else if (color === 'cream') {
-        document.getElementById('creamBtn').style.transform = 'translateY(-3px)';
-        document.getElementById('creamBtn').style.boxShadow = '0 0 0 3px #e0e0e0';
-        updateStatus('cream-selected');
-    }
-    
-    console.log("تم تعيين اللون:", color);
-}
-
-// معالجة النقر على الخلية
-function handleCellClick(cell) {
-    if (!currentColor) {
-        updateStatus('no-color-selected');
-        return;
-    }
-    
-    // التحقق من الخلايا الثابتة
-    if (cell.classList.contains('pink') && !cell.classList.contains('selected-green') && !cell.classList.contains('selected-red')) {
-        updateStatus('fixed-cell');
-        return;
-    }
-    
-    if (cell.classList.contains('green') && !cell.classList.contains('selected-green') && !cell.classList.contains('selected-red')) {
-        updateStatus('fixed-green-cell');
-        return;
-    }
-    
-    // حساب التغيير في العدادات
-    var oldGreen = cell.classList.contains('selected-green') ? 1 : 0;
-    var oldRed = cell.classList.contains('selected-red') ? 1 : 0;
-    var newGreen = currentColor === 'green' ? 1 : 0;
-    var newRed = currentColor === 'red' ? 1 : 0;
-    
-    // إضافة تأثير التغيير
-    cell.classList.add('color-changing');
-    
-    // تأخير لإظهار التأثير
-    setTimeout(function() {
-        // إزالة الألوان السابقة
-        cell.classList.remove('selected-green', 'selected-red');
+    // تهيئة الصفحة بعد التحميل
+    window.onload = function() {
+        // إضافة الأحداث للأزرار والخلايا
+        setupEventHandlers();
         
-        // إضافة اللون الجديد
-        if (currentColor === 'green') {
-            cell.classList.add('selected-green');
-        } else if (currentColor === 'red') {
-            cell.classList.add('selected-red');
+        // تحميل التقدم المحفوظ
+        loadSavedProgress();
+    };
+
+    // إعداد معالجات الأحداث
+    function setupEventHandlers() {
+        // أزرار الألوان
+        document.getElementById('greenBtn').onclick = function() { setColor('green'); };
+        document.getElementById('redBtn').onclick = function() { setColor('red'); };
+        document.getElementById('creamBtn').onclick = function() { setColor('cream'); };
+        document.getElementById('resetBtn').onclick = confirmReset;
+        document.getElementById('randomBtn').onclick = highlightRandomLetter;
+        document.getElementById('shuffleBtn').onclick = confirmShuffle;
+        document.getElementById('themeToggle').onclick = toggleDarkMode;
+        document.getElementById('helpBtn').onclick = showHelp;
+        document.getElementById('closeHelpBtn').onclick = hideHelp;
+        document.getElementById('langToggle').onclick = toggleLanguage;
+        document.getElementById('zoomInBtn').onclick = zoomIn;
+        document.getElementById('zoomOutBtn').onclick = zoomOut;
+        
+        // أزرار التأكيد
+        document.getElementById('confirmYes').onclick = handleConfirmYes;
+        document.getElementById('confirmNo').onclick = hideConfirmDialog;
+        
+        // إضافة معالجات الأحداث للخلايا
+        var cells = document.querySelectorAll('.hex');
+        cells.forEach(function(cell) {
+            cell.onclick = function() {
+                handleCellClick(cell);
+            };
+        });
+    }
+
+    // تعيين اللون الحالي
+    function setColor(color) {
+        currentColor = color;
+        
+        // إزالة التأثير البصري من جميع الأزرار
+        document.getElementById('greenBtn').style.transform = '';
+        document.getElementById('redBtn').style.transform = '';
+        document.getElementById('creamBtn').style.transform = '';
+        document.getElementById('greenBtn').style.boxShadow = '';
+        document.getElementById('redBtn').style.boxShadow = '';
+        document.getElementById('creamBtn').style.boxShadow = '';
+        
+        // إضافة تأثير بصري للزر المحدد
+        if (color === 'green') {
+            document.getElementById('greenBtn').style.transform = 'translateY(-3px)';
+            document.getElementById('greenBtn').style.boxShadow = '0 0 0 3px var(--primary-dark)';
+            updateStatus('green-selected');
+        } else if (color === 'red') {
+            document.getElementById('redBtn').style.transform = 'translateY(-3px)';
+            document.getElementById('redBtn').style.boxShadow = '0 0 0 3px var(--secondary-dark)';
+            updateStatus('red-selected');
+        } else if (color === 'cream') {
+            document.getElementById('creamBtn').style.transform = 'translateY(-3px)';
+            document.getElementById('creamBtn').style.boxShadow = '0 0 0 3px #e0e0e0';
+            updateStatus('cream-selected');
+        }
+    }
+
+    // معالجة النقر على الخلية
+    function handleCellClick(cell) {
+        if (!currentColor) {
+            updateStatus('no-color-selected');
+            return;
         }
         
-        // إزالة تأثير التغيير
-        cell.classList.remove('color-changing');
-        
-        // تحديث العدادات
-        greenCellsCount = greenCellsCount - oldGreen + newGreen;
-        redCellsCount = redCellsCount - oldRed + newRed;
-        
-        updateCounters();
-        
-        // حفظ التقدم
-        saveProgress();
-    }, 150);
-}
-
-// تحديث رسالة الحالة
-function updateStatus(message) {
-    var statusText = document.getElementById('statusText');
-    if (statusText) {
-        // إذا كانت الرسالة هي اسم مفتاح في قائمة الرسائل
-        if (typeof message === 'string' && statusMessages[message]) {
-            var currentLang = document.documentElement.getAttribute('lang') || 'ar';
-            statusText.innerText = statusMessages[message][currentLang];
-        } else {
-            // إذا كانت رسالة نصية مباشرة
-            statusText.innerText = message;
+        // التحقق من الخلايا الثابتة
+        if ((cell.classList.contains('pink') || cell.classList.contains('green')) && 
+            !cell.classList.contains('selected-green') && !cell.classList.contains('selected-red')) {
+            updateStatus('fixed-cell');
+            return;
         }
         
-        // إضافة تأثير التحديث
-        statusText.classList.add('status-text-update');
+        // حساب التغيير في العدادات
+        var oldGreen = cell.classList.contains('selected-green') ? 1 : 0;
+        var oldRed = cell.classList.contains('selected-red') ? 1 : 0;
+        var newGreen = currentColor === 'green' ? 1 : 0;
+        var newRed = currentColor === 'red' ? 1 : 0;
         
-        // إزالة التأثير بعد انتهاء الرسوم المتحركة
+        // إضافة تأثير التغيير
+        cell.classList.add('color-changing');
+        
+        // تأخير لإظهار التأثير
         setTimeout(function() {
-            statusText.classList.remove('status-text-update');
-        }, 500);
+            // إزالة الألوان السابقة
+            cell.classList.remove('selected-green', 'selected-red');
+            
+            // إضافة اللون الجديد
+            if (currentColor === 'green') {
+                cell.classList.add('selected-green');
+            } else if (currentColor === 'red') {
+                cell.classList.add('selected-red');
+            }
+            
+            // إزالة تأثير التغيير
+            cell.classList.remove('color-changing');
+            
+            // تحديث العدادات
+            greenCellsCount = greenCellsCount - oldGreen + newGreen;
+            redCellsCount = redCellsCount - oldRed + newRed;
+            
+            updateCounters();
+            
+            // حفظ التقدم
+            saveProgress();
+        }, 150);
     }
-}
 
-// تحديث العدادات
-function updateCounters() {
-    var greenCounter = document.getElementById('greenCount');
-    var redCounter = document.getElementById('redCount');
-    
-    if (greenCounter) greenCounter.innerText = greenCellsCount;
-    if (redCounter) redCounter.innerText = redCellsCount;
-}
+    // تحديث رسالة الحالة
+    function updateStatus(message) {
+        var statusText = document.getElementById('statusText');
+        if (statusText) {
+            // إذا كانت الرسالة هي اسم مفتاح في قائمة الرسائل
+            if (typeof message === 'string' && statusMessages[message]) {
+                var currentLang = document.documentElement.getAttribute('lang') || 'ar';
+                statusText.innerText = statusMessages[message][currentLang];
+            } else {
+                // إذا كانت رسالة نصية مباشرة
+                statusText.innerText = message;
+            }
+            
+            // إضافة تأثير التحديث
+            statusText.classList.add('status-text-update');
+            
+            // إزالة التأثير بعد انتهاء الرسوم المتحركة
+            setTimeout(function() {
+                statusText.classList.remove('status-text-update');
+            }, 500);
+        }
+    }
 
-// تظليل حرف عشوائي
-function highlightRandomLetter() {
-    // إلغاء التظليل السابق
-    if (highlightedCell) {
-        highlightedCell.classList.remove('highlight', 'purple');
+    // تحديث العدادات
+    function updateCounters() {
+        document.getElementById('greenCount').innerText = greenCellsCount;
+        document.getElementById('redCount').innerText = redCellsCount;
     }
-    
-    // إلغاء المؤقت السابق
-    if (highlightTimeout) {
-        clearTimeout(highlightTimeout);
-    }
-    
-    // اختيار حرف عشوائي
-    var letterCells = document.querySelectorAll('.hex.letter');
-    if (letterCells.length > 0) {
-        var randomIndex = Math.floor(Math.random() * letterCells.length);
-        highlightedCell = letterCells[randomIndex];
-        
-        // إضافة تأثير التظليل
-        highlightedCell.classList.add('highlight', 'purple');
-        
-        // تحديث الرسالة
-        updateStatus('random-letter');
-        
-        // إزالة التظليل بعد 3 ثوان
-        highlightTimeout = setTimeout(function() {
+
+    // تظليل حرف عشوائي
+    function highlightRandomLetter() {
+        // إلغاء التظليل السابق
+        if (highlightedCell) {
             highlightedCell.classList.remove('highlight', 'purple');
-            highlightedCell = null;
-            updateStatus('select-color');
-        }, 3000);
+        }
+        
+        // إلغاء المؤقت السابق
+        if (highlightTimeout) {
+            clearTimeout(highlightTimeout);
+        }
+        
+        // اختيار حرف عشوائي
+        var letterCells = document.querySelectorAll('.hex.letter');
+        if (letterCells.length > 0) {
+            var randomIndex = Math.floor(Math.random() * letterCells.length);
+            highlightedCell = letterCells[randomIndex];
+            
+            // إضافة تأثير التظليل
+            highlightedCell.classList.add('highlight', 'purple');
+            
+            // تحديث الرسالة
+            updateStatus('random-letter');
+            
+            // إزالة التظليل بعد 3 ثوان
+            highlightTimeout = setTimeout(function() {
+                highlightedCell.classList.remove('highlight', 'purple');
+                highlightedCell = null;
+                updateStatus('select-color');
+            }, 3000);
+        }
     }
-}
 
-// تبديل الوضع الليلي
-function toggleDarkMode() {
-    var body = document.body;
-    var isDarkMode = body.classList.contains('dark-mode');
-    
-    if (isDarkMode) {
-        body.classList.remove('dark-mode');
+    // تبديل الوضع الليلي
+    function toggleDarkMode() {
+        var body = document.body;
+        var isDarkMode = body.classList.contains('dark-mode');
+        
+        if (isDarkMode) {
+            body.classList.remove('dark-mode');
+        } else {
+            body.classList.add('dark-mode');
+        }
+        
         // تحديث نص الزر حسب اللغة الحالية
-        var isArabic = document.documentElement.getAttribute('lang') === 'ar';
-        document.getElementById('themeToggle').innerHTML = '<i class="fas fa-moon"></i> <span>' + (isArabic ? 'الوضع الليلي' : 'Dark Mode') + '</span>';
-    } else {
-        body.classList.add('dark-mode');
-        // تحديث نص الزر حسب اللغة الحالية
-        var isArabic = document.documentElement.getAttribute('lang') === 'ar';
-        document.getElementById('themeToggle').innerHTML = '<i class="fas fa-moon"></i> <span>' + (isArabic ? 'الوضع العادي' : 'Light Mode') + '</span>';
+        updateThemeButtonText();
+        
+        // حفظ الإعداد
+        localStorage.setItem('darkMode', !isDarkMode ? 'enabled' : null);
     }
-    
-    // حفظ الإعداد
-    localStorage.setItem('darkMode', !isDarkMode ? 'enabled' : null);
-}
 
-// طلب تأكيد إعادة التعيين
-function confirmReset() {
-    var confirmDialog = document.getElementById('confirmDialog');
-    var confirmTitle = document.getElementById('confirmTitle');
-    var confirmMessage = document.getElementById('confirmMessage');
-    
-    if (confirmDialog && confirmTitle && confirmMessage) {
+    // تحديث نص زر الوضع الليلي
+    function updateThemeButtonText() {
+        var isArabic = document.documentElement.getAttribute('lang') === 'ar';
+        var isDarkMode = document.body.classList.contains('dark-mode');
+        var themeButton = document.getElementById('themeToggle');
+        
+        if (themeButton) {
+            var iconClass = isDarkMode ? 'fa-sun' : 'fa-moon';
+            var buttonText = isDarkMode ? 
+                        (isArabic ? 'الوضع العادي' : 'Light Mode') : 
+                        (isArabic ? 'الوضع الليلي' : 'Dark Mode');
+            
+            themeButton.innerHTML = '<i class="fas ' + iconClass + '"></i> <span class="btn-text">' + buttonText + '</span>';
+        }
+    }
+
+    // طلب تأكيد إعادة التعيين
+    function confirmReset() {
+        var confirmDialog = document.getElementById('confirmDialog');
+        var confirmTitle = document.getElementById('confirmTitle');
+        var confirmMessage = document.getElementById('confirmMessage');
+        
         var isArabic = document.documentElement.getAttribute('lang') === 'ar';
         
         confirmTitle.innerText = isArabic ? 'تأكيد عملية المسح' : 'Confirm Reset';
@@ -518,15 +477,13 @@ function confirmReset() {
         confirmDialog.setAttribute('data-action', 'reset');
         confirmDialog.style.display = 'flex';
     }
-}
 
-// طلب تأكيد تبديل الحروف
-function confirmShuffle() {
-    var confirmDialog = document.getElementById('confirmDialog');
-    var confirmTitle = document.getElementById('confirmTitle');
-    var confirmMessage = document.getElementById('confirmMessage');
-    
-    if (confirmDialog && confirmTitle && confirmMessage) {
+    // طلب تأكيد تبديل الحروف
+    function confirmShuffle() {
+        var confirmDialog = document.getElementById('confirmDialog');
+        var confirmTitle = document.getElementById('confirmTitle');
+        var confirmMessage = document.getElementById('confirmMessage');
+        
         var isArabic = document.documentElement.getAttribute('lang') === 'ar';
         
         confirmTitle.innerText = isArabic ? 'تأكيد العملية' : 'Confirm Action';
@@ -534,503 +491,402 @@ function confirmShuffle() {
         confirmDialog.setAttribute('data-action', 'shuffle');
         confirmDialog.style.display = 'flex';
     }
-}
 
-// إخفاء مربع حوار التأكيد
-function hideConfirmDialog() {
-    var confirmDialog = document.getElementById('confirmDialog');
-    if (confirmDialog) {
-        confirmDialog.style.display = 'none';
+    // إخفاء مربع حوار التأكيد
+    function hideConfirmDialog() {
+        document.getElementById('confirmDialog').style.display = 'none';
     }
-}
 
-// معالجة تأكيد العملية
-function handleConfirmYes() {
-    var confirmDialog = document.getElementById('confirmDialog');
-    var action = confirmDialog.getAttribute('data-action');
-    
-    hideConfirmDialog();
-    
-    if (action === 'reset') {
-        resetAllCells();
-    } else if (action === 'shuffle') {
-        shuffleLetters();
-        resetAllCells();
-    }
-}
-
-// إعادة تعيين جميع الخلايا
-function resetAllCells() {
-    var cells = document.querySelectorAll('.hex');
-    
-    cells.forEach(function(cell) {
-        cell.classList.remove('selected-green', 'selected-red', 'highlight', 'purple', 'color-changing');
-    });
-    
-    // إعادة تعيين العدادات
-    greenCellsCount = 0;
-    redCellsCount = 0;
-    
-    updateCounters();
-    updateStatus('reset-done');
-    
-    // حفظ التقدم
-    saveProgress();
-}
-
-// تبديل الحروف
-function shuffleLetters() {
-    // الأحرف العربية والإنجليزية
-    var arabicLetters = ['أ', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'س', 'ش', 'ص', 'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ك', 'ل', 'م', 'ن', 'و', 'ه', 'ي'];
-    var englishLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-    
-    // تحديد مجموعة الحروف بناءً على لغة الصفحة
-    var isArabic = document.documentElement.getAttribute('lang') === 'ar';
-    var letters = isArabic ? arabicLetters.slice() : englishLetters.slice();
-    
-    // خلط الحروف
-    for (var i = letters.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = letters[i];
-        letters[i] = letters[j];
-        letters[j] = temp;
-    }
-    
-    // تطبيق الحروف المخلوطة
-    var letterCells = document.querySelectorAll('.hex.letter');
-    letterCells.forEach(function(cell, index) {
-        if (index < letters.length) {
-            // إضافة تأثير الحركة
-            cell.classList.add('shuffling');
-            
-            // تأخير تغيير النص
-            setTimeout(function() {
-                cell.innerText = letters[index];
-                
-                // إزالة تأثير الحركة
-                setTimeout(function() {
-                    cell.classList.remove('shuffling');
-                }, 500);
-            }, 100);
-        }
-    });
-    
-    updateStatus('shuffle-done');
-}
-
-// تبديل اللغة
-function toggleLanguage() {
-    var html = document.documentElement;
-    var isArabic = html.getAttribute('lang') === 'ar';
-    
-    if (isArabic) {
-        // التغيير من العربية إلى الإنجليزية
-        html.setAttribute('lang', 'en');
-        html.setAttribute('dir', 'ltr');
+    // معالجة تأكيد العملية
+    function handleConfirmYes() {
+        var confirmDialog = document.getElementById('confirmDialog');
+        var action = confirmDialog.getAttribute('data-action');
         
-        // تحديث نص زر اللغة
-        document.getElementById('langToggle').innerHTML = '<i class="fas fa-language"></i> <span>العربية</span>';
+        hideConfirmDialog();
         
-        // تحديث زر الوضع الليلي/العادي
-        var isDarkMode = document.body.classList.contains('dark-mode');
-        document.getElementById('themeToggle').innerHTML = '<i class="fas fa-moon"></i> <span>' + (isDarkMode ? 'Light Mode' : 'Dark Mode') + '</span>';
-        
-        // تحديث العنوان
-        document.querySelector('.game-title').innerHTML = '<i class="fas fa-chess-board"></i> <span>Letter</span> Honeycomb';
-        
-        // تحديث النصوص الأخرى
-        updateUITextsToEnglish();
-        
-        // تغيير الحروف إلى الإنجليزية
-        changeLettersToEnglish();
-    } else {
-        // التغيير من الإنجليزية إلى العربية
-        html.setAttribute('lang', 'ar');
-        html.setAttribute('dir', 'rtl');
-        
-        // تحديث نص زر اللغة
-        document.getElementById('langToggle').innerHTML = '<i class="fas fa-language"></i> <span>English</span>';
-        
-        // تحديث زر الوضع الليلي/العادي
-        var isDarkMode = document.body.classList.contains('dark-mode');
-        document.getElementById('themeToggle').innerHTML = '<i class="fas fa-moon"></i> <span>' + (isDarkMode ? 'الوضع العادي' : 'الوضع الليلي') + '</span>';
-        
-        // تحديث العنوان
-        document.querySelector('.game-title').innerHTML = '<i class="fas fa-chess-board"></i> <span>لعبة</span> خلية الحروف';
-        
-        // تحديث النصوص الأخرى
-        updateUITextsToArabic();
-        
-        // تغيير الحروف إلى العربية
-        changeLettersToArabic();
-    }
-    
-    // حفظ الإعداد
-    saveProgress();
-}
-
-// تحديث النصوص إلى العربية
-function updateUITextsToArabic() {
-    var elements = {
-        'greenBtn': '<i class="fas fa-paint-brush"></i> الأخضر',
-        'redBtn': '<i class="fas fa-paint-brush"></i> الأحمر',
-        'creamBtn': '<i class="fas fa-paint-brush"></i> الأصلي',
-        'resetBtn': '<i class="fas fa-eraser"></i> مسح الكل',
-        'randomBtn': '<i class="fas fa-random"></i> حرف عشوائي',
-        'shuffleBtn': '<i class="fas fa-sync-alt"></i> تبديل الحروف',
-        'statusText': 'اختر لوناً ثم انقر على الخلايا لتغيير لونها',
-        'helpTitle': 'تعليمات اللعبة',
-        'closeHelpBtn': 'إغلاق',
-        'confirmTitle': 'تأكيد العملية',
-        'confirmMessage': 'سيتم حذف جميع التقدم الحالي. هل أنت متأكد؟',
-        'confirmYes': 'موافق',
-        'confirmNo': 'إلغاء',
-        'zoomInBtn': '<i class="fas fa-search-plus"></i>',
-        'zoomOutBtn': '<i class="fas fa-search-minus"></i>'
-    };
-    
-    // تطبيق النصوص العربية
-    for (var id in elements) {
-        var element = document.getElementById(id);
-        if (element) {
-            element.innerHTML = elements[id];
+        if (action === 'reset') {
+            resetAllCells();
+        } else if (action === 'shuffle') {
+            shuffleLetters();
+            resetAllCells();
         }
     }
-    
-    // تحديث تسميات العدادات
-    document.querySelector('.stat-box:first-child span').innerHTML = 'الخلايا الخضراء: <span id="greenCount">' + greenCellsCount + '</span>';
-    document.querySelector('.stat-box:last-child span').innerHTML = 'الخلايا الحمراء: <span id="redCount">' + redCellsCount + '</span>';
-    
-    // تحديث نص التذييل
-    document.querySelector('.footer').innerHTML = '© جميع الحقوق محفوظة - لعبة خلية الحروف بواسطة عبداللطيف خالد 2025';
-    
-    // تحديث محتوى المساعدة
-    updateHelpContentToArabic();
-    
-    // تحديث نص زر مساعدة
-    var helpBtn = document.getElementById('helpBtn');
-    if (helpBtn) {
-        helpBtn.setAttribute('title', 'تعليمات اللعبة');
-    }
-    
-    // تحديث رسالة الحالة
-    updateStatus('select-color');
-}
 
-// تحديث النصوص إلى الإنجليزية
-function updateUITextsToEnglish() {
-    var elements = {
-        'greenBtn': '<i class="fas fa-paint-brush"></i> Green',
-        'redBtn': '<i class="fas fa-paint-brush"></i> Red',
-        'creamBtn': '<i class="fas fa-paint-brush"></i> Original',
-        'resetBtn': '<i class="fas fa-eraser"></i> Reset All',
-        'randomBtn': '<i class="fas fa-random"></i> Random Letter',
-        'shuffleBtn': '<i class="fas fa-sync-alt"></i> Shuffle Letters',
-        'statusText': 'Select a color then click on cells to change their color',
-        'helpTitle': 'Game Instructions',
-        'closeHelpBtn': 'Close',
-        'confirmTitle': 'Confirm Action',
-        'confirmMessage': 'All current progress will be erased. Are you sure?',
-        'confirmYes': 'Yes',
-        'confirmNo': 'Cancel',
-        'zoomInBtn': '<i class="fas fa-search-plus"></i>',
-        'zoomOutBtn': '<i class="fas fa-search-minus"></i>'
-    };
-    
-    // تطبيق النصوص الإنجليزية
-    for (var id in elements) {
-        var element = document.getElementById(id);
-        if (element) {
-            element.innerHTML = elements[id];
-        }
-    }
-    
-    // تحديث تسميات العدادات
-    document.querySelector('.stat-box:first-child span').innerHTML = 'Green Cells: <span id="greenCount">' + greenCellsCount + '</span>';
-    document.querySelector('.stat-box:last-child span').innerHTML = 'Red Cells: <span id="redCount">' + redCellsCount + '</span>';
-    
-    // تحديث نص التذييل
-    document.querySelector('.footer').innerHTML = '© All Rights Reserved - Letter Honeycomb Game by AbdulLatif Khaled 2025';
-    
-    // تحديث محتوى المساعدة
-    updateHelpContentToEnglish();
-    
-    // تحديث نص زر مساعدة
-    var helpBtn = document.getElementById('helpBtn');
-    if (helpBtn) {
-        helpBtn.setAttribute('title', 'Game Instructions');
-    }
-    
-    // تحديث رسالة الحالة
-    updateStatus('select-color');
-}
-
-// تحديث محتوى المساعدة إلى العربية
-function updateHelpContentToArabic() {
-    var helpContent = document.getElementById('helpContent');
-    if (helpContent) {
-        helpContent.innerHTML = `
-<h4>تعليمات اللعبة</h4>
-        <p><strong>كيفية اللعب:</strong></p>
-        <p><strong>الحرف الأول:</strong> يقوم مدير المسابقة باختيار حرف أول عشوائي، ثم يطرح سؤالًا يجب أن تبدأ إجابته بذلك الحرف.</p>
-        
-        <p><strong>هدف كل فريق:</strong></p>
-        <ul>
-            <li>🟥 الفريق الأحمر يسعى لتكوين خط عمودي باللون الأحمر يفوز بالجولة عند اكمال الخط.</li>
-            <li>🟩 الفريق الأخضر يسعى لتكوين خط أفقي باللون الأخضر يفوز بالجولة عند اكمال الخط.</li>
-        </ul>
-        
-        <p><strong>تحديد الفائز بالسؤال:</strong></p>
-        <ul>
-            <li>الفريق الذي يضغط الجرس أولًًا ⏳ لديه 3 ثوانٍ للإجابة.</li>
-            <li>✅ إجابة صحيحة → تتلون الخلية بلون الفريق.</li>
-            <li>❌ إجابة خاطئة → ينتقل السؤال للفريق الآخر لمدة 10 ثوانٍ ⏳، ثم يصبح متاحًا للجميع، وعلى من يريد الإجابة الضغط على الجرس أولًا.</li>
-            <li>الفريق الفائز بالحرف يختار الحرف التالي.</li>
-        </ul>
-        
-        <p><strong>تحديد الفائز بالمسابقة:</strong></p>
-        <ul>
-            <li>يتم لعب 3 جولات، والفريق الذي يفوز بجولتين هو الفائز بالمسابقة! 🏆</li>
-        </ul>
-        
-        <h4>ميزات إضافية</h4>
-        <ul>
-            <li><strong>مسح الكل:</strong> يعيد تعيين جميع الخلايا إلى حالتها الأصلية.</li>
-            <li><strong>حرف عشوائي:</strong> يبرز حرفًا عشوائيًا في اللوحة لمدة 3 ثوانٍ.</li>
-            <li><strong>تبديل الحروف:</strong> يخلط مواضع الحروف في اللوحة.</li>
-            <li><strong>الوضع الليلي:</strong> يبدل بين الواجهة الفاتحة والداكنة لراحة العينين.</li>
-            <li><strong>تغيير اللغة:</strong> يبدل بين الحروف العربية والإنجليزية.</li>
-            <li><strong>تكبير/تصغير:</strong> يتحكم في حجم خلية الحروف.</li>
-        </ul>
-        
-        <h4>حول اللعبة</h4>
-        <p>تم تصميم لعبة خلية الحروف لتكون تجربة تفاعلية ممتعة للصغار والكبار. تساعد اللعبة على تعزيز الثقافة العامة وروح الفريق بطريقة تنافسية ممتعة.</p>
-        `;
-    }
-}
-    // تحديث محتوى المساعدة إلى الإنجليزية
-function updateHelpContentToEnglish() {
-    var helpContent = document.getElementById('helpContent');
-    if (helpContent) {
-        helpContent.innerHTML = `
-<h4>Game Instructions</h4>
-        <p><strong>How to Play:</strong></p>
-        <p><strong>First Letter:</strong> The competition manager randomly selects a starting letter, then asks a question that must be answered starting with that letter.</p>
-        
-        <p><strong>Objective of Each Team:</strong></p>
-        <ul>
-            <li>🟥 The Red team aims to form a vertical line in red color and wins the round upon completing the line.</li>
-            <li>🟩 The Green team aims to form a horizontal line in green color and wins the round upon completing the line.</li>
-        </ul>
-        
-        <p><strong>Determining the Question Winner:</strong></p>
-        <ul>
-            <li>The team that rings the bell first ⏳ has 3 seconds to answer.</li>
-            <li>✅ Correct Answer → The cell is colored with the team's color.</li>
-            <li>❌ Wrong Answer → The question is passed to the other team for 10 seconds ⏳, then becomes available to everyone. Whoever wants to answer must ring the bell first.</li>
-            <li>The team that wins the letter chooses the next letter.</li>
-        </ul>
-        
-        <p><strong>Determining the Competition Winner:</strong></p>
-        <ul>
-            <li>3 rounds are played, and the team that wins two rounds is the winner of the competition! 🏆</li>
-        </ul>
-        
-        <h4>Additional Features</h4>
-        <ul>
-            <li><strong>Reset All:</strong> Resets all cells to their original state.</li>
-            <li><strong>Random Letter:</strong> Highlights a random letter on the board for 3 seconds.</li>
-            <li><strong>Shuffle Letters:</strong> Mixes the positions of the letters on the board.</li>
-            <li><strong>Dark Mode:</strong> Toggles between light and dark interface for eye comfort.</li>
-            <li><strong>Change Language:</strong> Switches between Arabic and English letters.</li>
-            <li><strong>Zoom In/Out:</strong> Controls the size of the letter cells.</li>
-        </ul>
-        
-        <h4>About the Game</h4>
-        <p>Letter Honeycomb Game is designed to be an interactive and fun experience for young and old. The game helps enhance general knowledge and team spirit in an enjoyable competitive way.</p>
-        `;
-    }
-}
-
-// تغيير الحروف إلى العربية
-function changeLettersToArabic() {
-    var arabicLetters = ['أ', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'س', 'ش', 'ص', 'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ك', 'ل', 'م', 'ن', 'و', 'ه', 'ي'];
-    var letterCells = document.querySelectorAll('.hex.letter');
-    
-    letterCells.forEach(function(cell, index) {
-        if (index < arabicLetters.length) {
-            cell.textContent = arabicLetters[index];
-        }
-    });
-}
-
-// تغيير الحروف إلى الإنجليزية
-function changeLettersToEnglish() {
-    var englishLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-    var letterCells = document.querySelectorAll('.hex.letter');
-    
-    letterCells.forEach(function(cell, index) {
-        if (index < englishLetters.length) {
-            cell.textContent = englishLetters[index];
-        }
-    });
-}
-
-// وظائف التكبير والتصغير
-function zoomIn() {
-    if (currentZoom < 1.5) {
-        currentZoom += 0.1;
-        applyZoom();
-    }
-}
-
-function zoomOut() {
-    if (currentZoom > 0.5) {
-        currentZoom -= 0.1;
-        applyZoom();
-    }
-}
-
-function applyZoom() {
-    var honeycomb = document.querySelector('.honeycomb');
-    var container = document.querySelector('.honeycomb-container');
-    
-    if (honeycomb && container) {
-        honeycomb.style.transform = `scale(${currentZoom})`;
-        
-        // تعديل ارتفاع الحاوية
-        var baseHeight = 540;
-        container.style.height = `${baseHeight * currentZoom}px`;
-    }
-    
-    // حفظ الإعداد
-    saveProgress();
-}
-
-// إظهار مربع حوار المساعدة
-function showHelp() {
-    var helpDialog = document.getElementById('helpDialog');
-    if (helpDialog) {
-        helpDialog.style.display = 'flex';
-    }
-}
-
-// إخفاء مربع حوار المساعدة
-function hideHelp() {
-    var helpDialog = document.getElementById('helpDialog');
-    if (helpDialog) {
-        helpDialog.style.display = 'none';
-    }
-}
-
-// حفظ التقدم
-function saveProgress() {
-    var gameState = {
-        greenCells: [],
-        redCells: [],
-        darkMode: document.body.classList.contains('dark-mode'),
-        language: document.documentElement.getAttribute('lang'),
-        currentZoom: currentZoom
-    };
-    
-    // حفظ حالة الخلايا
-    var cells = document.querySelectorAll('.hex');
-    cells.forEach(function(cell, index) {
-        if (cell.classList.contains('selected-green')) {
-            gameState.greenCells.push(index);
-        } else if (cell.classList.contains('selected-red')) {
-            gameState.redCells.push(index);
-        }
-    });
-    
-    // حفظ في localStorage
-    try {
-        localStorage.setItem('honeycombGameState', JSON.stringify(gameState));
-    } catch (error) {
-        console.error('خطأ في حفظ التقدم:', error);
-    }
-}
-
-// تحميل التقدم المحفوظ
-function loadSavedProgress() {
-    try {
-        var savedState = localStorage.getItem('honeycombGameState');
-        if (!savedState) return;
-        
-        var gameState = JSON.parse(savedState);
+    // إعادة تعيين جميع الخلايا
+    function resetAllCells() {
         var cells = document.querySelectorAll('.hex');
         
-        // استعادة حالة الخلايا
-        if (gameState.greenCells && Array.isArray(gameState.greenCells)) {
-            gameState.greenCells.forEach(function(index) {
-                if (index < cells.length) {
-                    cells[index].classList.add('selected-green');
-                    greenCellsCount++;
-                }
-            });
+        cells.forEach(function(cell) {
+            cell.classList.remove('selected-green', 'selected-red', 'highlight', 'purple', 'color-changing');
+        });
+        
+        // إعادة تعيين العدادات
+        greenCellsCount = 0;
+        redCellsCount = 0;
+        
+        updateCounters();
+        updateStatus('reset-done');
+        
+        // حفظ التقدم
+        saveProgress();
+    }
+
+    // تبديل الحروف
+    function shuffleLetters() {
+        // تحديد مجموعة الحروف بناءً على لغة الصفحة
+        var isArabic = document.documentElement.getAttribute('lang') === 'ar';
+        var letters = isArabic ? arabicLetters.slice() : englishLetters.slice();
+        
+        // خلط الحروف
+        for (var i = letters.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = letters[i];
+            letters[i] = letters[j];
+            letters[j] = temp;
         }
         
-        if (gameState.redCells && Array.isArray(gameState.redCells)) {
-            gameState.redCells.forEach(function(index) {
-                if (index < cells.length) {
-                    cells[index].classList.add('selected-red');
-                    redCellsCount++;
-                }
-            });
-        }
-        
-        // استعادة حالة التكبير/التصغير
-        if (gameState.currentZoom) {
-            currentZoom = gameState.currentZoom;
-            applyZoom();
-        }
-        
-        // استعادة الوضع الليلي
-        if (gameState.darkMode) {
-            document.body.classList.add('dark-mode');
-            // تحديث نص زر الوضع الليلي/العادي
-            var isArabic = gameState.language === 'ar';
-            document.getElementById('themeToggle').innerHTML = '<i class="fas fa-moon"></i> <span>' + (isArabic ? 'الوضع العادي' : 'Light Mode') + '</span>';
-        } else {
-            document.body.classList.remove('dark-mode');
-            // تحديث نص زر الوضع الليلي/العادي
-            var isArabic = gameState.language === 'ar';
-            document.getElementById('themeToggle').innerHTML = '<i class="fas fa-moon"></i> <span>' + (isArabic ? 'الوضع الليلي' : 'Dark Mode') + '</span>';
-        }
-        
-        // استعادة اللغة
-        if (gameState.language) {
-            var currentLang = document.documentElement.getAttribute('lang');
-            if (currentLang !== gameState.language) {
-                document.documentElement.setAttribute('lang', gameState.language);
-                document.documentElement.setAttribute('dir', gameState.language === 'ar' ? 'rtl' : 'ltr');
+        // تطبيق الحروف المخلوطة
+        var letterCells = document.querySelectorAll('.hex.letter');
+        letterCells.forEach(function(cell, index) {
+            if (index < letters.length) {
+                // إضافة تأثير الحركة
+                cell.classList.add('shuffling');
                 
-                // تحديث واجهة المستخدم وفقًا للغة
-                if (gameState.language === 'ar') {
-                    document.getElementById('langToggle').innerHTML = '<i class="fas fa-language"></i> <span>English</span>';
-                    document.querySelector('.game-title').innerHTML = '<i class="fas fa-chess-board"></i> <span>لعبة</span> خلية الحروف';
-                    updateUITextsToArabic();
-                    changeLettersToArabic();
-                } else {
-                    document.getElementById('langToggle').innerHTML = '<i class="fas fa-language"></i> <span>العربية</span>';
-                    document.querySelector('.game-title').innerHTML = '<i class="fas fa-chess-board"></i> <span>Letter</span> Honeycomb';
-                    updateUITextsToEnglish();
-                    changeLettersToEnglish();
-                }
+                // تأخير تغيير النص
+                setTimeout(function() {
+                    cell.innerText = letters[index];
+                    
+                    // إزالة تأثير الحركة
+                    setTimeout(function() {
+                        cell.classList.remove('shuffling');
+                    }, 500);
+                }, 100);
+            }
+        });
+        
+        updateStatus('shuffle-done');
+    }
+
+    // تبديل اللغة
+    function toggleLanguage() {
+        var html = document.documentElement;
+        var isArabic = html.getAttribute('lang') === 'ar';
+        
+        if (isArabic) {
+            // التغيير من العربية إلى الإنجليزية
+            html.setAttribute('lang','en');
+            html.setAttribute('dir', 'ltr');
+            
+            // تحديث العناصر النصية
+            updateUILanguage('en');
+            
+            // تغيير الحروف إلى الإنجليزية
+            changeLettersTo('en');
+        } else {
+            // التغيير من الإنجليزية إلى العربية
+            html.setAttribute('lang', 'ar');
+            html.setAttribute('dir', 'rtl');
+            
+            // تحديث العناصر النصية
+            updateUILanguage('ar');
+            
+            // تغيير الحروف إلى العربية
+            changeLettersTo('ar');
+        }
+        
+        // حفظ الإعداد
+        saveProgress();
+    }
+
+    // تحديث واجهة المستخدم وفقاً للغة المحددة
+    function updateUILanguage(lang) {
+        var isArabic = lang === 'ar';
+        
+        // تحديث نص زر اللغة
+        document.getElementById('langToggle').innerHTML = '<i class="fas fa-language"></i> <span class="btn-text">' + (isArabic ? 'English' : 'العربية') + '</span>';
+        
+        // تحديث زر الوضع الليلي/العادي
+        updateThemeButtonText();
+        
+        // تحديث العنوان
+        document.querySelector('.game-title').innerHTML = isArabic ? 
+            '<i class="fas fa-chess-board"></i> <span>لعبة</span> خلية الحروف' : 
+            '<i class="fas fa-chess-board"></i> <span>Letter</span> Honeycomb';
+        
+        // تحديث أزرار الألوان
+        var uiElements = {
+            'greenBtn': isArabic ? '<i class="fas fa-paint-brush"></i> الأخضر' : '<i class="fas fa-paint-brush"></i> Green',
+            'redBtn': isArabic ? '<i class="fas fa-paint-brush"></i> الأحمر' : '<i class="fas fa-paint-brush"></i> Red',
+            'creamBtn': isArabic ? '<i class="fas fa-paint-brush"></i> الأصلي' : '<i class="fas fa-paint-brush"></i> Original',
+            'resetBtn': isArabic ? '<i class="fas fa-eraser"></i> مسح الكل' : '<i class="fas fa-eraser"></i> Reset All',
+            'randomBtn': isArabic ? '<i class="fas fa-random"></i> حرف عشوائي' : '<i class="fas fa-random"></i> Random Letter',
+            'shuffleBtn': isArabic ? '<i class="fas fa-sync-alt"></i> تبديل الحروف' : '<i class="fas fa-sync-alt"></i> Shuffle Letters',
+            'helpTitle': isArabic ? 'تعليمات اللعبة' : 'Game Instructions',
+            'closeHelpBtn': isArabic ? 'إغلاق' : 'Close',
+            'confirmTitle': isArabic ? 'تأكيد العملية' : 'Confirm Action',
+            'confirmMessage': isArabic ? 'سيتم حذف جميع التقدم الحالي. هل أنت متأكد؟' : 'All current progress will be erased. Are you sure?',
+            'confirmYes': isArabic ? 'موافق' : 'Yes',
+            'confirmNo': isArabic ? 'إلغاء' : 'Cancel'
+        };
+        
+        // تطبيق النصوص
+        for (var id in uiElements) {
+            var element = document.getElementById(id);
+            if (element) {
+                element.innerHTML = uiElements[id];
             }
         }
         
-        // تحديث العدادات
-        updateCounters();
+        // تحديث تسميات العدادات
+        document.querySelector('.stat-box:first-child span').innerHTML = isArabic ? 
+            'الخلايا الخضراء: <span id="greenCount">' + greenCellsCount + '</span>' : 
+            'Green Cells: <span id="greenCount">' + greenCellsCount + '</span>';
+            
+        document.querySelector('.stat-box:last-child span').innerHTML = isArabic ? 
+            'الخلايا الحمراء: <span id="redCount">' + redCellsCount + '</span>' : 
+            'Red Cells: <span id="redCount">' + redCellsCount + '</span>';
         
-    } catch (error) {
-        console.error('خطأ في تحميل التقدم المحفوظ:', error);
+        // تحديث نص التذييل
+        document.querySelector('.footer').innerHTML = isArabic ? 
+            '© جميع الحقوق محفوظة - لعبة خلية الحروف بواسطة عبداللطيف خالد 2025' : 
+            '© All Rights Reserved - Letter Honeycomb Game by AbdulLatif Khaled 2025';
+        
+        // تحديث محتوى المساعدة
+        updateHelpContent(lang);
+        
+        // تحديث رسالة الحالة
+        updateStatus('select-color');
     }
-}
 
-// تنفيذ عند تحميل الصفحة
-console.log("تم تحميل كود JavaScript بنجاح");
-</script>
+    // تحديث محتوى المساعدة
+    function updateHelpContent(lang) {
+        var helpContent = document.getElementById('helpContent');
+        if (!helpContent) return;
+        
+        if (lang === 'ar') {
+            helpContent.innerHTML = `
+<h4>تعليمات اللعبة</h4>
+<p><strong>كيفية اللعب:</strong></p>
+<p><strong>الحرف الأول:</strong> يقوم مدير المسابقة باختيار حرف أول عشوائي، ثم يطرح سؤالًا يجب أن تبدأ إجابته بذلك الحرف.</p>
 
+<p><strong>هدف كل فريق:</strong></p>
+<ul>
+    <li>🟥 الفريق الأحمر يسعى لتكوين خط عمودي باللون الأحمر يفوز بالجولة عند اكمال الخط.</li>
+    <li>🟩 الفريق الأخضر يسعى لتكوين خط أفقي باللون الأخضر يفوز بالجولة عند اكمال الخط.</li>
+</ul>
+
+<p><strong>تحديد الفائز بالسؤال:</strong></p>
+<ul>
+    <li>الفريق الذي يضغط الجرس أولًًا ⏳ لديه 3 ثوانٍ للإجابة.</li>
+    <li>✅ إجابة صحيحة → تتلون الخلية بلون الفريق.</li>
+    <li>❌ إجابة خاطئة → ينتقل السؤال للفريق الآخر لمدة 10 ثوانٍ ⏳، ثم يصبح متاحًا للجميع، وعلى من يريد الإجابة الضغط على الجرس أولًا.</li>
+    <li>الفريق الفائز بالحرف يختار الحرف التالي.</li>
+</ul>
+
+<p><strong>تحديد الفائز بالمسابقة:</strong></p>
+<ul>
+    <li>يتم لعب 3 جولات، والفريق الذي يفوز بجولتين هو الفائز بالمسابقة! 🏆</li>
+</ul>
+
+<h4>ميزات إضافية</h4>
+<ul>
+    <li><strong>مسح الكل:</strong> يعيد تعيين جميع الخلايا إلى حالتها الأصلية.</li>
+    <li><strong>حرف عشوائي:</strong> يبرز حرفًا عشوائيًا في اللوحة لمدة 3 ثوانٍ.</li>
+    <li><strong>تبديل الحروف:</strong> يخلط مواضع الحروف في اللوحة.</li>
+    <li><strong>الوضع الليلي:</strong> يبدل بين الواجهة الفاتحة والداكنة لراحة العينين.</li>
+    <li><strong>تغيير اللغة:</strong> يبدل بين الحروف العربية والإنجليزية.</li>
+    <li><strong>تكبير/تصغير:</strong> يتحكم في حجم خلية الحروف.</li>
+</ul>
+
+<h4>حول اللعبة</h4>
+<p>تم تصميم لعبة خلية الحروف لتكون تجربة تفاعلية ممتعة للصغار والكبار. تساعد اللعبة على تعزيز الثقافة العامة وروح الفريق بطريقة تنافسية ممتعة.</p>
+            `;
+        } else {
+            helpContent.innerHTML = `
+<h4>Game Instructions</h4>
+<p><strong>How to Play:</strong></p>
+<p><strong>First Letter:</strong> The competition manager randomly selects a starting letter, then asks a question that must be answered starting with that letter.</p>
+
+<p><strong>Objective of Each Team:</strong></p>
+<ul>
+    <li>🟥 The Red team aims to form a vertical line in red color and wins the round upon completing the line.</li>
+    <li>🟩 The Green team aims to form a horizontal line in green color and wins the round upon completing the line.</li>
+</ul>
+
+<p><strong>Determining the Question Winner:</strong></p>
+<ul>
+    <li>The team that rings the bell first ⏳ has 3 seconds to answer.</li>
+    <li>✅ Correct Answer → The cell is colored with the team's color.</li>
+    <li>❌ Wrong Answer → The question is passed to the other team for 10 seconds ⏳, then becomes available to everyone. Whoever wants to answer must ring the bell first.</li>
+    <li>The team that wins the letter chooses the next letter.</li>
+</ul>
+
+<p><strong>Determining the Competition Winner:</strong></p>
+<ul>
+    <li>3 rounds are played, and the team that wins two rounds is the winner of the competition! 🏆</li>
+</ul>
+
+<h4>Additional Features</h4>
+<ul>
+    <li><strong>Reset All:</strong> Resets all cells to their original state.</li>
+    <li><strong>Random Letter:</strong> Highlights a random letter on the board for 3 seconds.</li>
+    <li><strong>Shuffle Letters:</strong> Mixes the positions of the letters on the board.</li>
+    <li><strong>Dark Mode:</strong> Toggles between light and dark interface for eye comfort.</li>
+    <li><strong>Change Language:</strong> Switches between Arabic and English letters.</li>
+    <li><strong>Zoom In/Out:</strong> Controls the size of the letter cells.</li>
+</ul>
+
+<h4>About the Game</h4>
+<p>Letter Honeycomb Game is designed to be an interactive and fun experience for young and old. The game helps enhance general knowledge and team spirit in an enjoyable competitive way.</p>
+            `;
+        }
+    }
+
+    // تغيير الحروف حسب اللغة
+    function changeLettersTo(lang) {
+        var letters = lang === 'ar' ? arabicLetters : englishLetters;
+        var letterCells = document.querySelectorAll('.hex.letter');
+        
+        letterCells.forEach(function(cell, index) {
+            if (index < letters.length) {
+                cell.textContent = letters[index];
+            }
+        });
+    }
+
+    // وظائف التكبير والتصغير
+    function zoomIn() {
+        if (currentZoom < 1.5) {
+            currentZoom += 0.1;
+            applyZoom();
+        }
+    }
+
+    function zoomOut() {
+        if (currentZoom > 0.5) {
+            currentZoom -= 0.1;
+            applyZoom();
+        }
+    }
+
+    function applyZoom() {
+        var honeycomb = document.querySelector('.honeycomb');
+        var container = document.querySelector('.honeycomb-container');
+        
+        if (honeycomb && container) {
+            honeycomb.style.transform = `scale(${currentZoom})`;
+            
+            // تعديل ارتفاع الحاوية
+            var baseHeight = 540;
+            container.style.height = `${baseHeight * currentZoom}px`;
+        }
+        
+        // حفظ الإعداد
+        saveProgress();
+    }
+
+    // إظهار مربع حوار المساعدة
+    function showHelp() {
+        document.getElementById('helpDialog').style.display = 'flex';
+    }
+
+    // إخفاء مربع حوار المساعدة
+    function hideHelp() {
+        document.getElementById('helpDialog').style.display = 'none';
+    }
+
+    // حفظ التقدم
+    function saveProgress() {
+        var gameState = {
+            greenCells: [],
+            redCells: [],
+            darkMode: document.body.classList.contains('dark-mode'),
+            language: document.documentElement.getAttribute('lang'),
+            currentZoom: currentZoom
+        };
+        
+        // حفظ حالة الخلايا
+        var cells = document.querySelectorAll('.hex');
+        cells.forEach(function(cell, index) {
+            if (cell.classList.contains('selected-green')) {
+                gameState.greenCells.push(index);
+            } else if (cell.classList.contains('selected-red')) {
+                gameState.redCells.push(index);
+            }
+        });
+        
+        // حفظ في localStorage
+        try {
+            localStorage.setItem('honeycombGameState', JSON.stringify(gameState));
+        } catch (error) {
+            console.error('خطأ في حفظ التقدم:', error);
+        }
+    }
+
+    // تحميل التقدم المحفوظ
+    function loadSavedProgress() {
+        try {
+            var savedState = localStorage.getItem('honeycombGameState');
+            if (!savedState) return;
+            
+            var gameState = JSON.parse(savedState);
+            var cells = document.querySelectorAll('.hex');
+            
+            // استعادة حالة الخلايا
+            if (gameState.greenCells && Array.isArray(gameState.greenCells)) {
+                gameState.greenCells.forEach(function(index) {
+                    if (index < cells.length) {
+                        cells[index].classList.add('selected-green');
+                        greenCellsCount++;
+                    }
+                });
+            }
+            
+            if (gameState.redCells && Array.isArray(gameState.redCells)) {
+                gameState.redCells.forEach(function(index) {
+                    if (index < cells.length) {
+                        cells[index].classList.add('selected-red');
+                        redCellsCount++;
+                    }
+                });
+            }
+            
+            // استعادة حالة التكبير/التصغير
+            if (gameState.currentZoom) {
+                currentZoom = gameState.currentZoom;
+                applyZoom();
+            }
+            
+            // استعادة الوضع الليلي
+            if (gameState.darkMode) {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+            
+            // استعادة اللغة
+            if (gameState.language) {
+                var currentLang = document.documentElement.getAttribute('lang');
+                if (currentLang !== gameState.language) {
+                    document.documentElement.setAttribute('lang', gameState.language);
+                    document.documentElement.setAttribute('dir', gameState.language === 'ar' ? 'rtl' : 'ltr');
+                    
+                    // تحديث واجهة المستخدم وفقًا للغة
+                    updateUILanguage(gameState.language);
+                    changeLettersTo(gameState.language);
+                }
+            }
+            
+            // تحديث العدادات
+            updateCounters();
+            
+            // تحديث نص زر الوضع الليلي بعد تحميل الإعدادات
+            updateThemeButtonText();
+            
+        } catch (error) {
+            console.error('خطأ في تحميل التقدم المحفوظ:', error);
+        }
+    }
+    </script>
 </body>
 </html>

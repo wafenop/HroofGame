@@ -29,40 +29,35 @@
     --shadow-md: 0 5px 12px rgba(0,0,0,0.2);
     --shadow-lg: 0 12px 28px rgba(0,0,0,0.25);
     --border-radius: 12px;
-    --transition-fast: all 0.2s ease;
     --transition-normal: all 0.3s ease;
-    --transition-slow: all 0.5s ease;
     --hex-border: rgba(0,0,0,0.2);
     --honeycomb-gradient: linear-gradient(135deg, #1a237e, #283593);
     --honeycomb-border: rgba(255, 255, 255, 0.1);
-    --hex-text-color: #333; /* لون نص الخلايا في الوضع العادي */
+    --hex-text-color: #333;
     --highlight-glow: 0 0 15px 5px rgba(147, 112, 219, 0.7);
     --overlay-bg: rgba(0, 0, 0, 0.7);
     --help-dialog-width: 600px;
 }
 
-/* ألوان الوضع الليلي المحسنة */
+/* ألوان الوضع الليلي */
 .dark-mode {
-    /* تحسين خلفية الوضع الليلي مع تدرج أكثر جاذبية */
     --bg-color: #121212;
     --bg-gradient: radial-gradient(circle, #1a1a1a 0%, #0a0a0a 100%);
-    
-    /* تحسين ألوان العناصر الأخرى */
-    --primary-color: #66bb6a;      /* أخضر أكثر إشراقاً */
+    --primary-color: #66bb6a;
     --primary-dark: #4CAF50;
     --primary-light: #a5d6a7;
-    --secondary-color: #ff7070;    /* أحمر أكثر نعومة */
+    --secondary-color: #ff7070;
     --secondary-dark: #E53935;
     --secondary-light: #ffcdd2;
-    --accent-color: #ba68c8;       /* بنفسجي أفتح */
+    --accent-color: #ba68c8;
     --accent-dark: #9575CD;
     --accent-light: #d1c4e9;
-    --cream-color: #f5f5f5;        /* رمادي فاتح محسن للوضع الليلي */
+    --cream-color: #f5f5f5;
     --cream-dark: #e0e0e0;
     --dark-color: #0d0d0d;
-    --text-color: #f5f5f5;         /* نص أبيض فاتح للقراءة */
+    --text-color: #f5f5f5;
     --title-color: #FFFFFF;
-    --card-bg: #1e1e1e;            /* خلفية البطاقات داكنة لكن ليست سوداء تماماً */
+    --card-bg: #1e1e1e;
     --footer-color: #BBBBBB;
     --btn-bg: #2a2a2a;
     --theme-btn-bg: #f5f5f5;
@@ -72,8 +67,8 @@
     --shadow-lg: 0 8px 24px rgba(255,255,255,0.07);
     --honeycomb-gradient: linear-gradient(135deg, #1c1c1c, #0f0f0f);
     --honeycomb-border: rgba(255, 255, 255, 0.08);
-    --hex-text-color: #000000; /* لون نص الخلايا في الوضع الليلي */
-    --hex-border: rgba(255, 255, 255, 0.15); /* حدود الخلايا في الوضع الليلي */
+    --hex-text-color: #000000;
+    --hex-border: rgba(255, 255, 255, 0.15);
     --highlight-glow: 0 0 18px 8px rgba(186, 104, 200, 0.8);
     --overlay-bg: rgba(0, 0, 0, 0.85);
 }
@@ -84,7 +79,7 @@
     padding: 0;
 }
 
-/* إضافة تأثير فلاش خفيف عند تبديل الوضع */
+/* تأثير تبديل الوضع */
 @keyframes mode-transition {
     0% { opacity: 0.8; }
     100% { opacity: 1; }
@@ -94,7 +89,7 @@ body.dark-mode, body:not(.dark-mode) {
     animation: mode-transition 0.3s ease;
 }
 
-/* تحسين تحديد اللغات المختلفة */
+/* تحديد الخطوط */
 html[lang="ar"] {
     font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
 }
@@ -114,7 +109,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     background-image: var(--bg-gradient);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: var(--transition-normal);
 }
 
 .container {
@@ -127,33 +122,27 @@ body {
     position: relative;
 }
 
-/* تحسين أزرار التحكم الرئيسية في الأعلى */
+/* أزرار التحكم الرئيسية */
 .main-controls {
     display: flex;
-    gap: 10px;
-    position: absolute;
-    top: 0;
+    justify-content: flex-end;
     width: 100%;
-    justify-content: space-between;
+    margin-bottom: 10px;
     z-index: 10;
 }
 
-.left-controls {
+.controls-group {
     display: flex;
-    gap: 10px;
+    gap: 8px;
+    flex-wrap: nowrap;
 }
 
-.right-controls {
-    display: flex;
-    gap: 10px;
-}
-
-/* تحسين أزرار التحكم */
+/* تنسيق أزرار التحكم */
 .control-btn {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 15px;
+    padding: 8px 12px;
     border: none;
     border-radius: 20px;
     background-color: var(--theme-btn-bg);
@@ -164,14 +153,12 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.control-btn:focus {
-    outline: 2px solid var(--accent-color);
-    outline-offset: 2px;
-}
-
-.control-btn i {
-    font-size: 15px;
-    transition: transform 0.5s ease;
+.control-btn.icon-only {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    padding: 0;
+    justify-content: center;
 }
 
 .control-btn:hover {
@@ -179,82 +166,35 @@ body {
     box-shadow: var(--shadow-md);
 }
 
-/* زر تبديل الوضع الليلي */
-.theme-toggle-btn i {
-    transition: transform 0.5s ease, color 0.3s ease;
+.control-btn i {
+    font-size: 16px;
+    transition: transform 0.5s ease;
 }
 
-body.dark-mode .theme-toggle-btn i {
-    transform: rotate(180deg);
+/* تأثيرات زر الوضع الليلي */
+body.dark-mode .control-btn i.fa-sun {
     color: #f9d71c;
 }
 
-body.dark-mode .theme-toggle-btn i.fa-moon::before {
-    content: "\f185";
-}
-
-/* أزرار التكبير والتصغير */
-.zoom-controls {
-    display: flex;
-    gap: 5px;
-}
-
-.zoom-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    background-color: var(--accent-color);
-    color: white;
-}
-
-.zoom-btn:hover {
-    background-color: var(--accent-dark);
-}
-
-/* زر المساعدة */
-.help-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.help-btn:hover {
-    background-color: var(--primary-dark);
-}
-
-/* تحسين رأس الصفحة */
+/* رأس الصفحة والعنوان */
 .header {
     text-align: center;
     margin-bottom: 1.5rem;
     width: 100%;
-    margin-top: 40px;
 }
 
 .game-title {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 900;
     color: var(--title-color);
-    position: relative;
-    display: inline-block;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    transition: var(--transition-normal);
 }
 
 .game-title i {
     color: var(--accent-color);
-    margin-left: 10px;
-    margin-right: 10px;
-    transition: color 0.3s ease;
+    margin: 0 10px;
+    transition: var(--transition-normal);
 }
 
 .game-title span {
@@ -265,7 +205,7 @@ body.dark-mode .theme-toggle-btn i.fa-moon::before {
     font-weight: 900;
 }
 
-/* تحسين حاوية أزرار التحكم */
+/* حاوية أزرار التحكم بالألوان */
 .controls-container {
     background-color: var(--card-bg);
     padding: 20px;
@@ -274,7 +214,7 @@ body.dark-mode .theme-toggle-btn i.fa-moon::before {
     margin-bottom: 25px;
     width: 100%;
     border-top: 4px solid var(--primary-color);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: var(--transition-normal);
 }
 
 .controls {
@@ -288,7 +228,7 @@ html[dir="rtl"] .controls {
     direction: rtl;
 }
 
-/* تحسين أزرار الألوان */
+/* أزرار الألوان */
 .color-btn {
     padding: 12px 18px;
     border: none;
@@ -308,27 +248,6 @@ html[dir="rtl"] .controls {
     overflow: hidden;
 }
 
-.color-btn:focus {
-    outline: 2px solid var(--accent-color);
-    outline-offset: 2px;
-}
-
-.color-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: translateX(-100%);
-    transition: transform 0.3s;
-}
-
-.color-btn:hover::before {
-    transform: translateX(0);
-}
-
 .color-btn:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-md);
@@ -338,7 +257,7 @@ html[dir="rtl"] .controls {
     transform: translateY(1px);
 }
 
-/* تحسين ألوان الأزرار */
+/* ألوان الأزرار */
 .green-btn { 
     background-color: var(--primary-color); 
     color: white; 
@@ -399,7 +318,34 @@ html[dir="rtl"] .controls {
     background-color: #f57c00;
 }
 
-/* تحسين حاوية خلية الحروف */
+/* رسالة الحالة */
+.status-text {
+    margin: 20px 0;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    width: 100%;
+    text-align: center;
+    transition: var(--transition-normal);
+    border-left: 4px solid var(--accent-color);
+    border-right: 4px solid var(--accent-color);
+}
+
+/* تأثير تحديث رسالة الحالة */
+@keyframes status-update {
+    0% { transform: scale(0.98); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+    }
+
+.status-text-update {
+    animation: status-update 0.5s ease;
+}
+
+/* حاوية خلية الحروف */
 .honeycomb-container {
     width: 100%;
     max-width: 630px;
@@ -416,7 +362,7 @@ html[dir="rtl"] .controls {
     background-image: var(--honeycomb-gradient);
     border: 5px solid var(--honeycomb-border);
     overflow: hidden;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
+    transition: var(--transition-normal);
 }
 
 .honeycomb {
@@ -428,7 +374,7 @@ html[dir="rtl"] .controls {
     transition: transform 0.3s ease;
 }
 
-/* تحسين التأثيرات الحركية للحروف */
+/* تأثيرات الحروف والخلايا */
 @keyframes letter-flip {
     0% { transform: rotateY(0deg); opacity: 1; }
     50% { transform: rotateY(90deg); opacity: 0; }
@@ -439,7 +385,6 @@ html[dir="rtl"] .controls {
     animation: letter-flip 0.5s ease;
 }
 
-/* تأثير جديد لتغيير اللون */
 @keyframes color-change {
     0% { transform: scale(1); }
     50% { transform: scale(1.15); filter: brightness(1.2); }
@@ -450,13 +395,13 @@ html[dir="rtl"] .controls {
     animation: color-change 0.3s forwards;
 }
 
-/* تحسين تأثير النبض للخلايا المحددة */
 @keyframes subtle-pulse {
     0% { transform: scale(1.05); }
     50% { transform: scale(1.08); box-shadow: 0 0 12px rgba(255, 255, 255, 0.3); }
     100% { transform: scale(1.05); }
 }
 
+/* تنسيق الخلايا السداسية */
 .hex {
     position: absolute;
     width: 80px;
@@ -474,13 +419,8 @@ html[dir="rtl"] .controls {
     border: 1px solid var(--hex-border);
     z-index: 1;
     user-select: none;
-    -webkit-tap-highlight-color: transparent; /* منع تأثير النقر الافتراضي */
-    touch-action: manipulation; /* تحسين استجابة اللمس */
-}
-
-.hex:focus {
-    outline: 2px solid var(--accent-color);
-    outline-offset: 2px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .hex:hover {
@@ -489,38 +429,34 @@ html[dir="rtl"] .controls {
     box-shadow: 0 0 15px rgba(255,255,255,0.2);
 }
 
-/* تحسين الاستجابة للمس على الأجهزة اللوحية والهواتف */
 @media (hover: none) {
     .hex:hover {
-        transform: none; /* إزالة تأثير التكبير عند التحويم في أجهزة اللمس */
+        transform: none;
     }
     
     .hex:active {
-        transform: scale(1.05); /* تطبيق التأثير عند النقر الفعلي */
+        transform: scale(1.05);
     }
 }
 
-/* تحسين مظهر الخلايا في الوضع الليلي */
+/* ألوان الخلايا */
 .hex.cream { 
     background-color: var(--cream-color); 
     color: var(--hex-text-color);
 }
 
-/* تحسين وضوح الحروف */
 .hex.letter {
     color: var(--hex-text-color);
     font-weight: bold;
     text-shadow: 0 0 1px rgba(0,0,0,0.3);
 }
 
-/* تحسين الوضوح في الوضع الليلي */
 .dark-mode .hex.cream.letter {
     color: #000000;
     background-color: #f0f0f0;
     text-shadow: none;
 }
 
-/* ألوان الخلايا */
 .hex.green { 
     background-color: var(--primary-color); 
     color: white;
@@ -536,7 +472,7 @@ html[dir="rtl"] .controls {
     color: white;
 }
 
-/* تحسين مظهر الخلايا المحددة */
+/* الخلايا المحددة */
 .hex.selected-green, .hex.selected-red {
     transform: scale(1.05);
     z-index: 5;
@@ -555,7 +491,7 @@ html[dir="rtl"] .controls {
     box-shadow: 0 0 12px var(--secondary-light);
 }
 
-/* تحسين تأثير الحرف العشوائي */
+/* تأثير الحرف العشوائي */
 @keyframes highlight-pulse {
     0% { transform: scale(1.1); box-shadow: var(--highlight-glow); }
     50% { transform: scale(1.15); box-shadow: 0 0 20px 8px var(--accent-color); }
@@ -581,19 +517,7 @@ html[dir="rtl"] .controls {
     text-shadow: 0 0 4px rgba(0,0,0,0.5) !important;
 }
 
-@keyframes shuffle-animation {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1) rotate(10deg); }
-    100% { transform: scale(1); }
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 15px 5px rgba(147, 112, 219, 0.7); }
-    50% { box-shadow: 0 0 25px 10px rgba(147, 112, 219, 0.9); }
-    100% { box-shadow: 0 0 15px 5px rgba(147, 112, 219, 0.7); }
-}
-
-/* مواضع الخلايا - مضغوطة لتقليل حجم الكود */
+/* مواضع الخلايا - ضغط لتقليل حجم الكود */
 .hex:nth-child(1) { left: -35px; top: 0px; }
 .hex:nth-child(2) { left: 45px; top: 0px; }
 .hex:nth-child(3) { left: 125px; top: 0px; }
@@ -642,42 +566,7 @@ html[dir="rtl"] .controls {
 .hex:nth-child(46) { left: 285px; top: 420px; }
 .hex:nth-child(47) { left: 365px; top: 420px; }
 
-/* تحسين رسالة الحالة */
-.status-text {
-    margin: 20px 0;
-    padding: 15px 25px;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: var(--card-bg);
-    border-radius: 10px;
-    box-shadow: var(--shadow-md);
-    width: 100%;
-    text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
-
-html[dir="rtl"] .status-text {
-    border-right: 4px solid var(--accent-color);
-    border-left: 4px solid var(--accent-color);
-}
-
-html[dir="ltr"] .status-text {
-    border-left: 4px solid var(--accent-color);
-    border-right: 4px solid var(--accent-color);
-}
-
-/* تأثير تحديث رسالة الحالة */
-@keyframes status-update {
-    0% { transform: scale(0.98); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
-}
-
-.status-text-update {
-    animation: status-update 0.5s ease;
-}
-
-/* تحسين إحصائيات اللعبة */
+/* إحصائيات اللعبة */
 .game-stats {
     display: flex;
     justify-content: space-around;
@@ -696,7 +585,7 @@ html[dir="ltr"] .status-text {
     align-items: center;
     gap: 10px;
     font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    transition: var(--transition-normal);
 }
 
 .stat-box:hover {
@@ -724,14 +613,7 @@ html[dir="ltr"] .status-text {
     color: var(--secondary-color);
 }
 
-/* تحسين تباين النص في الوضع الليلي */
-.dark-mode .stat-box,
-.dark-mode .status-text,
-.dark-mode .dialog-content p {
-    color: var(--text-color);
-}
-
-/* تحسين تذييل الصفحة */
+/* تذييل الصفحة */
 .footer {
     margin-top: 30px;
     text-align: center;
@@ -742,10 +624,10 @@ html[dir="ltr"] .status-text {
     width: 100%;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-sm);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: var(--transition-normal);
 }
 
-/* تحسين مربع حوار التأكيد */
+/* مربع حوار التأكيد */
 .confirm-dialog {
     display: none;
     position: fixed;
@@ -769,7 +651,7 @@ html[dir="ltr"] .status-text {
     width: 90%;
     box-shadow: var(--shadow-lg);
     text-align: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: var(--transition-normal);
     transform: scale(0.95);
     animation: dialog-appear 0.3s forwards;
 }
@@ -807,12 +689,7 @@ html[dir="ltr"] .status-text {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.dialog-btn:focus {
-    outline: 2px solid var(--accent-color);
-    outline-offset: 2px;
-}
-
-/* تحسين أزرار مربع الحوار */
+/* أزرار مربع الحوار */
 .yes-btn { 
     background-color: var(--primary-color); 
     color: white; 
@@ -860,7 +737,7 @@ html[dir="ltr"] .status-text {
     max-height: 80vh;
     overflow-y: auto;
     box-shadow: var(--shadow-lg);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: var(--transition-normal);
     transform: scale(0.95);
     animation: dialog-appear 0.3s forwards;
 }
@@ -917,21 +794,30 @@ html[dir="ltr"] .status-text {
     transform: translateY(-3px);
 }
 
-/* تعديلات توافقية محسنة للهواتف المحمولة */
+/* إخفاء نص الأزرار في الأجهزة الصغيرة */
+@media (max-width: 600px) {
+    .btn-text {
+        display: none;
+    }
+    
+    .control-btn {
+        padding: 8px;
+        width: 38px;
+        height: 38px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* تعديلات توافقية للهواتف المحمولة */
 @media (max-width: 700px) {
     .container { 
         padding: 10px; 
     }
     
     .main-controls {
-        position: relative;
-        flex-wrap: wrap;
         margin-bottom: 15px;
-    }
-    
-    .left-controls, .right-controls {
         justify-content: center;
-        margin-bottom: 10px;
     }
     
     .honeycomb-container { 
@@ -984,7 +870,6 @@ html[dir="ltr"] .status-text {
 @media (max-width: 500px) {
     .honeycomb {
         transform: scale(0.55);
-        transform-origin: center center;
     }
     
     .honeycomb-container { 
@@ -1001,31 +886,8 @@ html[dir="ltr"] .status-text {
         font-size: 2rem; 
     }
     
-    .controls { 
-        justify-content: center; 
-    }
-    
     .game-stats { 
         flex-direction: column; 
-    }
-    
-    .main-controls {
-        flex-direction: column;
-        gap: 5px;
-    }
-    
-    .left-controls, .right-controls {
-        width: 100%;
-        justify-content: space-between;
-    }
-    
-    .control-btn {
-        padding: 6px 10px;
-        font-size: 14px;
-    }
-    
-    .control-btn span {
-        display: none;
     }
 }
 

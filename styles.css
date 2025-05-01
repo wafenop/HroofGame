@@ -1,19 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Cairo:wght@400;700;900&display=swap');
-        
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Cairo:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap');
+
 :root {
-    /* متغيرات الألوان والتأثيرات */
+    /* ألوان الوضع العادي */
     --primary-color: #4caf50;
     --primary-dark: #388e3c;
+    --primary-light: #81c784;
     --secondary-color: #ff5252;
     --secondary-dark: #d32f2f;
+    --secondary-light: #ff8a80;
     --accent-color: #9c27b0;
     --accent-dark: #7b1fa2;
+    --accent-light: #ce93d8;
     --cream-color: #fffde7;
+    --cream-dark: #f9f7d7;
     --dark-color: #1a237e;
     --bg-color: #f5f7fa;
     --bg-gradient: radial-gradient(circle, #f7f9fc 0%, #e4e8ed 100%);
     --text-color: #333;
-    --light-text-color: white;
     --title-color: #000000;
     --card-bg: white;
     --footer-color: #777;
@@ -32,72 +35,86 @@
     --hex-border: rgba(0,0,0,0.2);
     --honeycomb-gradient: linear-gradient(135deg, #1a237e, #283593);
     --honeycomb-border: rgba(255, 255, 255, 0.1);
-    
-    /* متغيرات الخلية السداسية - تم تحويلها لقيم ثابتة */
-    --hex-width: 80px;
-    --hex-height: 92px;
-    --hex-margin: 5px;
-    --hex-font-size: 35px;
-    --hex-transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
-    /* مسافات متناسقة */
-    --spacing-xs: 5px;
-    --spacing-sm: 10px;
-    --spacing-md: 15px;
-    --spacing-lg: 20px;
-    --spacing-xl: 30px;
+    --hex-text-color: #333; /* لون نص الخلايا في الوضع العادي */
+    --highlight-glow: 0 0 15px 5px rgba(147, 112, 219, 0.7);
+    --overlay-bg: rgba(0, 0, 0, 0.7);
+    --help-dialog-width: 600px;
 }
 
-/* ألوان الوضع الليلي */
+/* ألوان الوضع الليلي المحسنة */
 .dark-mode {
-    --primary-color: #66bb6a;
-    --primary-dark: #43a047;
-    --secondary-color: #ff5252;
-    --secondary-dark: #d32f2f;
-    --accent-color: #ab47bc;
-    --accent-dark: #8e24aa;
-    --cream-color: #e0e0e0;
-    --dark-color: #0d1117;
+    /* تحسين خلفية الوضع الليلي مع تدرج أكثر جاذبية */
     --bg-color: #121212;
-    --bg-gradient: radial-gradient(circle, #1f1f1f 0%, #121212 100%);
-    --text-color: #333; /* للخلايا */
-    --light-text-color: #e0e0e0;
-    --title-color: #ffffff;
-    --card-bg: #1e1e1e;
-    --footer-color: #aaaaaa;
-    --btn-bg: #2d2d2d;
-    --reset-btn-bg: #607d8b;
-    --reset-btn-color: white;
-    --theme-btn-bg: #ffffff;
-    --theme-btn-color: #333;
-    --shadow-sm: 0 3px 6px rgba(0,0,0,0.25);
-    --shadow-md: 0 5px 12px rgba(0,0,0,0.3);
-    --shadow-lg: 0 12px 28px rgba(0,0,0,0.4);
-    --hex-border: rgba(0,0,0,0.3);
-    --honeycomb-gradient: linear-gradient(135deg, #0a101f, #16193b);
-    --honeycomb-border: rgba(255, 255, 255, 0.05);
+    --bg-gradient: radial-gradient(circle, #1a1a1a 0%, #0a0a0a 100%);
+    
+    /* تحسين ألوان العناصر الأخرى */
+    --primary-color: #66bb6a;      /* أخضر أكثر إشراقاً */
+    --primary-dark: #4CAF50;
+    --primary-light: #a5d6a7;
+    --secondary-color: #ff7070;    /* أحمر أكثر نعومة */
+    --secondary-dark: #E53935;
+    --secondary-light: #ffcdd2;
+    --accent-color: #ba68c8;       /* بنفسجي أفتح */
+    --accent-dark: #9575CD;
+    --accent-light: #d1c4e9;
+    --cream-color: #f5f5f5;        /* رمادي فاتح محسن للوضع الليلي */
+    --cream-dark: #e0e0e0;
+    --dark-color: #0d0d0d;
+    --text-color: #f5f5f5;         /* نص أبيض فاتح للقراءة */
+    --title-color: #FFFFFF;
+    --card-bg: #1e1e1e;            /* خلفية البطاقات داكنة لكن ليست سوداء تماماً */
+    --footer-color: #BBBBBB;
+    --btn-bg: #2a2a2a;
+    --theme-btn-bg: #f5f5f5;
+    --theme-btn-color: #121212;
+    --shadow-sm: 0 3px 6px rgba(0,0,0,0.35);
+    --shadow-md: 0 5px 12px rgba(0,0,0,0.4);
+    --shadow-lg: 0 8px 24px rgba(255,255,255,0.07);
+    --honeycomb-gradient: linear-gradient(135deg, #1c1c1c, #0f0f0f);
+    --honeycomb-border: rgba(255, 255, 255, 0.08);
+    --hex-text-color: #000000; /* لون نص الخلايا في الوضع الليلي */
+    --hex-border: rgba(255, 255, 255, 0.15); /* حدود الخلايا في الوضع الليلي */
+    --highlight-glow: 0 0 18px 8px rgba(186, 104, 200, 0.8);
+    --overlay-bg: rgba(0, 0, 0, 0.85);
 }
 
-/* إعادة تعيين عامة */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* إضافة تأثير فلاش خفيف عند تبديل الوضع */
+@keyframes mode-transition {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+body.dark-mode, body:not(.dark-mode) {
+    animation: mode-transition 0.3s ease;
+}
+
+/* تحسين تحديد اللغات المختلفة */
+html[lang="ar"] {
+    font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
+}
+
+html[lang="en"] {
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
 body {
     margin: 0;
-    padding: var(--spacing-lg);
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: var(--bg-color);
-    font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
-    color: var(--light-text-color);
+    color: var(--text-color);
     background-image: var(--bg-gradient);
-    transition: var(--transition-normal);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -106,19 +123,33 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: var(--spacing-lg);
+    padding: 20px;
     position: relative;
 }
 
-/* زر تبديل الوضع الليلي */
-.theme-toggle {
+/* تحسين أزرار التحكم الرئيسية في الأعلى */
+.main-controls {
+    display: flex;
+    gap: 10px;
     position: absolute;
     top: 0;
-    left: 0;
+    width: 100%;
+    justify-content: space-between;
     z-index: 10;
 }
 
-.theme-toggle-btn {
+.left-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.right-controls {
+    display: flex;
+    gap: 10px;
+}
+
+/* تحسين أزرار التحكم */
+.control-btn {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -128,20 +159,29 @@ body {
     background-color: var(--theme-btn-bg);
     color: var(--theme-btn-color);
     cursor: pointer;
-    font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
     font-weight: bold;
     box-shadow: var(--shadow-sm);
-    transition: var(--transition-normal);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.theme-toggle-btn i {
+.control-btn:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.control-btn i {
     font-size: 15px;
     transition: transform 0.5s ease;
 }
 
-.theme-toggle-btn:hover {
+.control-btn:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-md);
+}
+
+/* زر تبديل الوضع الليلي */
+.theme-toggle-btn i {
+    transition: transform 0.5s ease, color 0.3s ease;
 }
 
 body.dark-mode .theme-toggle-btn i {
@@ -153,10 +193,51 @@ body.dark-mode .theme-toggle-btn i.fa-moon::before {
     content: "\f185";
 }
 
+/* أزرار التكبير والتصغير */
+.zoom-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.zoom-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.zoom-btn:hover {
+    background-color: var(--accent-dark);
+}
+
+/* زر المساعدة */
+.help-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.help-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* تحسين رأس الصفحة */
 .header {
     text-align: center;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 1.5rem;
     width: 100%;
+    margin-top: 40px;
 }
 
 .game-title {
@@ -166,13 +247,14 @@ body.dark-mode .theme-toggle-btn i.fa-moon::before {
     position: relative;
     display: inline-block;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    transition: var(--transition-normal);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .game-title i {
     color: var(--accent-color);
     margin-left: 10px;
-    transition: var(--transition-normal);
+    margin-right: 10px;
+    transition: color 0.3s ease;
 }
 
 .game-title span {
@@ -181,38 +263,40 @@ body.dark-mode .theme-toggle-btn i.fa-moon::before {
     background-clip: text;
     color: transparent;
     font-weight: 900;
-    transition: var(--transition-normal);
 }
 
-/* لوحة التحكم */
+/* تحسين حاوية أزرار التحكم */
 .controls-container {
     background-color: var(--card-bg);
-    padding: var(--spacing-lg);
+    padding: 20px;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-md);
     margin-bottom: 25px;
     width: 100%;
     border-top: 4px solid var(--primary-color);
-    transition: var(--transition-normal);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .controls {
     display: flex;
     gap: 12px;
-    direction: rtl;
     flex-wrap: wrap;
     justify-content: center;
 }
 
+html[dir="rtl"] .controls {
+    direction: rtl;
+}
+
+/* تحسين أزرار الألوان */
 .color-btn {
     padding: 12px 18px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
-    transition: var(--transition-normal);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     flex: 1;
     min-width: 130px;
     box-shadow: var(--shadow-sm);
@@ -222,6 +306,11 @@ body.dark-mode .theme-toggle-btn i.fa-moon::before {
     gap: 8px;
     position: relative;
     overflow: hidden;
+}
+
+.color-btn:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
 }
 
 .color-btn::before {
@@ -249,113 +338,197 @@ body.dark-mode .theme-toggle-btn i.fa-moon::before {
     transform: translateY(1px);
 }
 
-.color-btn:focus-visible {
-    outline: 3px solid var(--accent-color);
-    outline-offset: 2px;
+/* تحسين ألوان الأزرار */
+.green-btn { 
+    background-color: var(--primary-color); 
+    color: white; 
+    border: 2px solid var(--primary-dark);
 }
 
-.green-btn {
-    background-color: var(--primary-color);
-    color: white;
+.green-btn:hover {
+    background-color: var(--primary-dark);
 }
 
-.red-btn {
-    background-color: var(--secondary-color);
-    color: white;
+.red-btn { 
+    background-color: var(--secondary-color); 
+    color: white; 
+    border: 2px solid var(--secondary-dark);
 }
 
-.cream-btn {
+.red-btn:hover {
+    background-color: var(--secondary-dark);
+}
+
+.cream-btn { 
     background-color: var(--cream-color);
-    color: var(--text-color);
-    border: 1px solid #e0e0e0;
+    color: var(--hex-text-color);
+    border: 2px solid var(--cream-dark);
 }
 
-body.dark-mode .cream-btn {
-    border-color: #666;
+.cream-btn:hover {
+    background-color: var(--cream-dark);
 }
 
-.reset-btn {
-    background-color: var(--reset-btn-bg);
-    color: var(--reset-btn-color);
+.reset-btn { 
+    background-color: var(--reset-btn-bg); 
+    color: var(--reset-btn-color); 
+    border: 2px solid #455a64;
 }
 
-.random-btn {
-    background-color: var(--accent-color);
-    color: white;
+.reset-btn:hover {
+    background-color: #455a64;
 }
 
-.shuffle-btn {
-    background-color: #ff9800;
-    color: white;
+.random-btn { 
+    background-color: var(--accent-color); 
+    color: white; 
+    border: 2px solid var(--accent-dark);
 }
 
-/* حاوية خلية النحل */
+.random-btn:hover {
+    background-color: var(--accent-dark);
+}
+
+.shuffle-btn { 
+    background-color: #ff9800; 
+    color: white; 
+    border: 2px solid #f57c00;
+}
+
+.shuffle-btn:hover {
+    background-color: #f57c00;
+}
+
+/* تحسين حاوية خلية الحروف */
 .honeycomb-container {
     width: 100%;
     max-width: 630px;
     height: 540px;
     position: relative;
     background-color: var(--dark-color);
-    padding: var(--spacing-md);
+    padding: 15px;
     border-radius: var(--border-radius);
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: var(--shadow-lg);
-    margin-top: var(--spacing-sm);
+    margin-top: 10px;
     background-image: var(--honeycomb-gradient);
     border: 5px solid var(--honeycomb-border);
     overflow: hidden;
-    transition: var(--transition-normal);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
 }
 
-/* تعديل على هيكل الخلية السداسية - تحسين للهواتف المحمولة */
 .honeycomb {
-    position: absolute;
-    width: 480px;
+    position: relative;
+    width: 449px;
     height: 500px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    margin: 0 auto;
     transform-origin: center center;
+    transition: transform 0.3s ease;
 }
 
-/* تصميم الخلية السداسية - تحديد أبعاد ثابتة */
+/* تحسين التأثيرات الحركية للحروف */
+@keyframes letter-flip {
+    0% { transform: rotateY(0deg); opacity: 1; }
+    50% { transform: rotateY(90deg); opacity: 0; }
+    100% { transform: rotateY(0deg); opacity: 1; }
+}
+
+.hex.letter.shuffling {
+    animation: letter-flip 0.5s ease;
+}
+
+/* تأثير جديد لتغيير اللون */
+@keyframes color-change {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); filter: brightness(1.2); }
+    100% { transform: scale(1.05); }
+}
+
+.hex.color-changing {
+    animation: color-change 0.3s forwards;
+}
+
+/* تحسين تأثير النبض للخلايا المحددة */
+@keyframes subtle-pulse {
+    0% { transform: scale(1.05); }
+    50% { transform: scale(1.08); box-shadow: 0 0 12px rgba(255, 255, 255, 0.3); }
+    100% { transform: scale(1.05); }
+}
+
 .hex {
     position: absolute;
-    width: 80px !important; /* تحديد عرض ثابت مهم */
-    height: 92px !important; /* تحديد ارتفاع ثابت مهم */
+    width: 80px;
+    height: 92px;
     background-color: var(--cream-color);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: var(--hex-font-size);
+    font-size: 35px;
     font-weight: bold;
     cursor: pointer;
-    transition: var(--hex-transition);
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid var(--hex-border);
     z-index: 1;
     user-select: none;
+    -webkit-tap-highlight-color: transparent; /* منع تأثير النقر الافتراضي */
+    touch-action: manipulation; /* تحسين استجابة اللمس */
+}
+
+.hex:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
 }
 
 .hex:hover {
     transform: scale(1.05);
     z-index: 10;
-    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
 }
 
-.hex.cream {
-    background-color: var(--cream-color);
-    color: var(--text-color);
+/* تحسين الاستجابة للمس على الأجهزة اللوحية والهواتف */
+@media (hover: none) {
+    .hex:hover {
+        transform: none; /* إزالة تأثير التكبير عند التحويم في أجهزة اللمس */
+    }
+    
+    .hex:active {
+        transform: scale(1.05); /* تطبيق التأثير عند النقر الفعلي */
+    }
 }
 
-.hex.green {
-    background-color: var(--primary-color);
+/* تحسين مظهر الخلايا في الوضع الليلي */
+.hex.cream { 
+    background-color: var(--cream-color); 
+    color: var(--hex-text-color);
 }
 
-.hex.pink {
-    background-color: var(--secondary-color);
+/* تحسين وضوح الحروف */
+.hex.letter {
+    color: var(--hex-text-color);
+    font-weight: bold;
+    text-shadow: 0 0 1px rgba(0,0,0,0.3);
+}
+
+/* تحسين الوضوح في الوضع الليلي */
+.dark-mode .hex.cream.letter {
+    color: #000000;
+    background-color: #f0f0f0;
+    text-shadow: none;
+}
+
+/* ألوان الخلايا */
+.hex.green { 
+    background-color: var(--primary-color); 
+    color: white;
+}
+
+.hex.pink { 
+    background-color: var(--secondary-color); 
+    color: white;
 }
 
 .hex.purple {
@@ -363,35 +536,49 @@ body.dark-mode .cream-btn {
     color: white;
 }
 
+/* تحسين مظهر الخلايا المحددة */
+.hex.selected-green, .hex.selected-red {
+    transform: scale(1.05);
+    z-index: 5;
+    animation: subtle-pulse 2s infinite ease-in-out;
+}
+
 .hex.selected-green {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    box-shadow: 0 0 12px var(--primary-light);
 }
 
 .hex.selected-red {
-    background-color: var(--secondary-color);
-    color: white;
+    background-color: var(--secondary-color) !important;
+    color: white !important;
+    box-shadow: 0 0 12px var(--secondary-light);
+}
+
+/* تحسين تأثير الحرف العشوائي */
+@keyframes highlight-pulse {
+    0% { transform: scale(1.1); box-shadow: var(--highlight-glow); }
+    50% { transform: scale(1.15); box-shadow: 0 0 20px 8px var(--accent-color); }
+    100% { transform: scale(1.1); box-shadow: var(--highlight-glow); }
 }
 
 .hex.highlight {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px 5px rgba(147, 112, 219, 0.7);
-    z-index: 20;
-    animation: pulse 1.5s infinite;
+    transform: scale(1.1) !important;
+    box-shadow: var(--highlight-glow) !important;
+    z-index: 20 !important;
+    animation: highlight-pulse 1.5s infinite !important;
 }
 
-.hex.letter {
-    color: var(--text-color); /* ضمان أن الحروف دائما سوداء */
+.hex.highlight.purple {
+    background-color: var(--accent-color) !important;
+    color: white !important;
+    text-shadow: 0 0 4px white !important;
 }
 
-.hex.letter.selected-green,
-.hex.letter.selected-red,
-.hex.letter.purple {
-    color: white; /* ضمان أن الحروف دائما بيضاء عند التحديد */
-}
-
-.hex.letter.shuffling {
-    animation: shuffle-animation 0.5s ease-in-out;
+.dark-mode .hex.highlight.purple {
+    background-color: var(--accent-light) !important;
+    color: #000 !important;
+    text-shadow: 0 0 4px rgba(0,0,0,0.5) !important;
 }
 
 @keyframes shuffle-animation {
@@ -406,9 +593,58 @@ body.dark-mode .cream-btn {
     100% { box-shadow: 0 0 15px 5px rgba(147, 112, 219, 0.7); }
 }
 
-/* نص الحالة - تم تحديثه لإزالة اللون البنفسجي */
+/* مواضع الخلايا - مضغوطة لتقليل حجم الكود */
+.hex:nth-child(1) { left: -35px; top: 0px; }
+.hex:nth-child(2) { left: 45px; top: 0px; }
+.hex:nth-child(3) { left: 125px; top: 0px; }
+.hex:nth-child(4) { left: 205px; top: 0px; }
+.hex:nth-child(5) { left: 285px; top: 0px; }
+.hex:nth-child(6) { left: 365px; top: 0px; }
+.hex:nth-child(7) { left: -75px; top: 70px; }
+.hex:nth-child(8) { left: 5px; top: 70px; }
+.hex:nth-child(9) { left: 85px; top: 70px; }
+.hex:nth-child(10) { left: 165px; top: 70px; }
+.hex:nth-child(11) { left: 245px; top: 70px; }
+.hex:nth-child(12) { left: 325px; top: 70px; }
+.hex:nth-child(13) { left: 405px; top: 70px; }
+.hex:nth-child(14) { left: -35px; top: 140px; }
+.hex:nth-child(15) { left: 45px; top: 140px; }
+.hex:nth-child(16) { left: 125px; top: 140px; }
+.hex:nth-child(17) { left: 205px; top: 140px; }
+.hex:nth-child(18) { left: 285px; top: 140px; }
+.hex:nth-child(19) { left: 365px; top: 140px; }
+.hex:nth-child(20) { left: 445px; top: 140px; }
+.hex:nth-child(21) { left: -75px; top: 210px; }
+.hex:nth-child(22) { left: 5px; top: 210px; }
+.hex:nth-child(23) { left: 85px; top: 210px; }
+.hex:nth-child(24) { left: 165px; top: 210px; }
+.hex:nth-child(25) { left: 245px; top: 210px; }
+.hex:nth-child(26) { left: 325px; top: 210px; }
+.hex:nth-child(27) { left: 405px; top: 210px; }
+.hex:nth-child(28) { left: -35px; top: 280px; }
+.hex:nth-child(29) { left: 45px; top: 280px; }
+.hex:nth-child(30) { left: 125px; top: 280px; }
+.hex:nth-child(31) { left: 205px; top: 280px; }
+.hex:nth-child(32) { left: 285px; top: 280px; }
+.hex:nth-child(33) { left: 365px; top: 280px; }
+.hex:nth-child(34) { left: 445px; top: 280px; }
+.hex:nth-child(35) { left: -75px; top: 350px; }
+.hex:nth-child(36) { left: 5px; top: 350px; }
+.hex:nth-child(37) { left: 85px; top: 350px; }
+.hex:nth-child(38) { left: 165px; top: 350px; }
+.hex:nth-child(39) { left: 245px; top: 350px; }
+.hex:nth-child(40) { left: 325px; top: 350px; }
+.hex:nth-child(41) { left: 405px; top: 350px; }
+.hex:nth-child(42) { left: -35px; top: 420px; }
+.hex:nth-child(43) { left: 45px; top: 420px; }
+.hex:nth-child(44) { left: 125px; top: 420px; }
+.hex:nth-child(45) { left: 205px; top: 420px; }
+.hex:nth-child(46) { left: 285px; top: 420px; }
+.hex:nth-child(47) { left: 365px; top: 420px; }
+
+/* تحسين رسالة الحالة */
 .status-text {
-    margin: var(--spacing-lg) 0;
+    margin: 20px 0;
     padding: 15px 25px;
     font-size: 18px;
     font-weight: bold;
@@ -417,34 +653,42 @@ body.dark-mode .cream-btn {
     box-shadow: var(--shadow-md);
     width: 100%;
     text-align: center;
-    transition: transform 0.2s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+html[dir="rtl"] .status-text {
     border-right: 4px solid var(--accent-color);
-    color: var(--text-color);
+    border-left: 4px solid var(--accent-color);
 }
 
-body.dark-mode .status-text {
-    color: var(--light-text-color);
+html[dir="ltr"] .status-text {
+    border-left: 4px solid var(--accent-color);
+    border-right: 4px solid var(--accent-color);
 }
 
-/* تحديث تأثير تنشيط نص الحالة بدون تغيير اللون */
-@keyframes flash-status {
-    0% { transform: scale(1); }
+/* تأثير تحديث رسالة الحالة */
+@keyframes status-update {
+    0% { transform: scale(0.98); }
     50% { transform: scale(1.02); }
     100% { transform: scale(1); }
 }
 
-/* إحصائيات اللعبة */
+.status-text-update {
+    animation: status-update 0.5s ease;
+}
+
+/* تحسين إحصائيات اللعبة */
 .game-stats {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin-top: var(--spacing-lg);
-    gap: var(--spacing-lg);
+    margin-top: 20px;
+    gap: 20px;
 }
 
 .stat-box {
     flex: 1;
-    padding: var(--spacing-md);
+    padding: 15px;
     background-color: var(--card-bg);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-sm);
@@ -452,12 +696,12 @@ body.dark-mode .status-text {
     align-items: center;
     gap: 10px;
     font-weight: bold;
-    transition: var(--transition-normal);
-    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
-body.dark-mode .stat-box {
-    color: var(--light-text-color);
+.stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
 }
 
 .stat-box:first-child {
@@ -480,21 +724,28 @@ body.dark-mode .stat-box {
     color: var(--secondary-color);
 }
 
-/* التذييل */
+/* تحسين تباين النص في الوضع الليلي */
+.dark-mode .stat-box,
+.dark-mode .status-text,
+.dark-mode .dialog-content p {
+    color: var(--text-color);
+}
+
+/* تحسين تذييل الصفحة */
 .footer {
-    margin-top: var(--spacing-xl);
+    margin-top: 30px;
     text-align: center;
     color: var(--footer-color);
     font-size: 14px;
-    padding: var(--spacing-md);
+    padding: 15px;
     background-color: var(--card-bg);
     width: 100%;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-sm);
-    transition: var(--transition-normal);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* مربع حوار التأكيد */
+/* تحسين مربع حوار التأكيد */
 .confirm-dialog {
     display: none;
     position: fixed;
@@ -502,10 +753,12 @@ body.dark-mode .stat-box {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--overlay-bg);
     z-index: 1000;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(3px);
+    transition: opacity 0.3s ease;
 }
 
 .dialog-content {
@@ -516,12 +769,19 @@ body.dark-mode .stat-box {
     width: 90%;
     box-shadow: var(--shadow-lg);
     text-align: center;
-    transition: var(--transition-normal);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    transform: scale(0.95);
+    animation: dialog-appear 0.3s forwards;
+}
+
+@keyframes dialog-appear {
+    0% { transform: scale(0.95); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 .dialog-content h3 {
     margin-bottom: 15px;
-    color: var(--accent-dark);
+    color: var(--accent-color);
     font-size: 1.5rem;
 }
 
@@ -530,10 +790,6 @@ body.dark-mode .stat-box {
     font-size: 1.1rem;
     line-height: 1.6;
     color: var(--text-color);
-}
-
-body.dark-mode .dialog-content p {
-    color: var(--light-text-color);
 }
 
 .dialog-buttons {
@@ -545,21 +801,34 @@ body.dark-mode .dialog-content p {
 .dialog-btn {
     padding: 10px 20px;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: bold;
-    font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
     cursor: pointer;
-    transition: var(--transition-normal);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.yes-btn {
-    background-color: var(--primary-color);
-    color: white;
+.dialog-btn:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
 }
 
-.no-btn {
-    background-color: var(--secondary-color);
-    color: white;
+/* تحسين أزرار مربع الحوار */
+.yes-btn { 
+    background-color: var(--primary-color); 
+    color: white; 
+}
+
+.yes-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.no-btn { 
+    background-color: var(--secondary-color); 
+    color: white; 
+}
+
+.no-btn:hover {
+    background-color: var(--secondary-dark);
 }
 
 .dialog-btn:hover {
@@ -567,21 +836,119 @@ body.dark-mode .dialog-content p {
     box-shadow: var(--shadow-sm);
 }
 
-/* تعديلات توافقية للهواتف المحمولة */
+/* مربع حوار المساعدة */
+.help-dialog {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-bg);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(3px);
+}
+
+.help-content {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    max-width: var(--help-dialog-width);
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    transform: scale(0.95);
+    animation: dialog-appear 0.3s forwards;
+}
+
+.help-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 10px;
+}
+
+.help-content h4 {
+    color: var(--accent-color);
+    margin: 20px 0 10px;
+    font-size: 1.3rem;
+}
+
+.help-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.help-content ul {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.help-content li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.help-content li strong {
+    color: var(--accent-color);
+}
+
+.close-help-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 25px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.close-help-btn:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-3px);
+}
+
+/* تعديلات توافقية محسنة للهواتف المحمولة */
 @media (max-width: 700px) {
-    .container {
-        padding: var(--spacing-sm);
+    .container { 
+        padding: 10px; 
     }
     
-    .honeycomb-container {
-        width: 100%;
+    .main-controls {
+        position: relative;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+    }
+    
+    .left-controls, .right-controls {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    
+    .honeycomb-container { 
+        width: 100%; 
         max-width: 600px;
         height: 420px;
-        padding: var(--spacing-sm);
+        padding: 10px;
     }
     
-    .controls {
-        gap: 8px;
+    .honeycomb {
+        transform: scale(0.7);
+        transform-origin: center center;
+        margin: 0 auto;
+    }
+    
+    .controls { 
+        gap: 8px; 
     }
     
     .color-btn {
@@ -590,8 +957,9 @@ body.dark-mode .dialog-content p {
         padding: 10px 15px;
     }
     
-    .game-title {
-        font-size: 2.5rem;
+    .game-title { 
+        font-size: 2.5rem; 
+        margin-top: 10px;
     }
     
     .status-text {
@@ -599,29 +967,28 @@ body.dark-mode .dialog-content p {
         padding: 12px 15px;
     }
     
-    .game-stats {
-        flex-direction: row;
-        gap: 10px;
+    .help-content {
+        max-width: 95%;
+        padding: 20px;
     }
     
-    .theme-toggle {
-        position: relative;
-        width: 100%;
-        text-align: left;
-        margin-bottom: 15px;
+    .help-content h3 {
+        font-size: 1.5rem;
     }
     
-    /* تأكيد الأحجام للخلايا في الموبايل */
-    .hex {
-        width: 80px !important;
-        height: 92px !important;
+    .help-content h4 {
+        font-size: 1.2rem;
     }
 }
 
-/* تعديلات إضافية للشاشات الصغيرة */
 @media (max-width: 500px) {
-    .honeycomb-container {
-        height: 380px;
+    .honeycomb {
+        transform: scale(0.55);
+        transform-origin: center center;
+    }
+    
+    .honeycomb-container { 
+        height: 380px; 
     }
     
     .color-btn {
@@ -630,30 +997,45 @@ body.dark-mode .dialog-content p {
         font-size: 14px;
     }
     
-    .game-title {
-        font-size: 2rem;
+    .game-title { 
+        font-size: 2rem; 
     }
     
-    .controls {
-        justify-content: center;
+    .controls { 
+        justify-content: center; 
     }
     
-    .game-stats {
+    .game-stats { 
+        flex-direction: column; 
+    }
+    
+    .main-controls {
         flex-direction: column;
+        gap: 5px;
     }
     
-    /* تم استبدال القيم النسبية بقيم ثابتة لتفادي المشاكل في الهواتف */
-    .hex {
-        width: 80px !important;
-        height: 92px !important;
-        font-size: 25px;
+    .left-controls, .right-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .control-btn {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+    
+    .control-btn span {
+        display: none;
     }
 }
 
-/* دعم إضافي للهواتف الصغيرة جداً */
 @media (max-width: 400px) {
-    .honeycomb-container {
-        height: 340px;
+    .honeycomb { 
+        transform: scale(0.45); 
+    }
+    
+    .honeycomb-container { 
+        height: 340px; 
     }
     
     .color-btn {
@@ -662,27 +1044,7 @@ body.dark-mode .dialog-content p {
         font-size: 13px;
     }
     
-    .controls-container {
-        padding: 15px 10px;
+    .controls-container { 
+        padding: 15px 10px; 
     }
-    
-    .theme-toggle-btn {
-        font-size: 13px;
-        padding: 6px 12px;
-    }
-    
-    /* المحافظة على الأبعاد الثابتة في الهواتف الصغيرة جداً */
-    .hex {
-        width: 80px !important;
-        height: 92px !important;
-        font-size: 24px;
-    }
-}
-
-/* تصحيح إضافي للخلايا المتفرقة في الهواتف */
-.honeycomb .hex {
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    will-change: transform;
-    transform-style: preserve-3d;
 }
